@@ -1,0 +1,124 @@
+switch case
+-----------------
+
+switch(expression)
+{
+case <condition1>: statements; break;
+case <condition2>: statements; break;
+case <condition3>: statements; break;
+---
+----
+default: statements;
+
+}
+
+Loop: set of statement/s can be repeated multiple times based on a condition.
+
+while
+do..while
+for loop
+
+while loop
+-------
+
+while(condition)
+{
+statements;
+}
+
+do..while
+-------------
+
+do
+{
+//statements;
+}while(condition);
+
+
+for loop
+--------------
+
+initilization
+condition
+inc/dec
+
+
+for(initilize;condition; inc/dec)
+{
+statemetns;
+}
+
+
+// Program for Nested If Else..
+
+		int Day=7;
+		
+		if (Day==1) {
+			System.out.println("Sunday");
+		}else if (Day==2) {
+			System.out.println("Monday");
+		}else if (Day==3) {
+			System.out.println("Tuesday");
+		}else if (Day==4) {
+			System.out.println("Wednesday");
+		}else if (Day==5) {
+			System.out.println("Thursday");
+		}else if (Day==6) {
+			System.out.println("Friday");
+		}else if (Day==7) {
+			System.out.println("Saturday");
+		}else{
+			System.out.println("Wrong Input");
+		}
+
+
+// Program for Switch Case Statement
+	
+		int Day =12;
+		
+		switch(Day) {
+		
+		case 1: System.out.println("Sunday");break;
+		case 2: System.out.println("Monday");break;
+		case 3: System.out.println("Tuesday");break;
+		case 4: System.out.println("Wednesday");break;
+		case 5: System.out.println("Thursday");break;
+		case 6: System.out.println("Friday");break;
+		case 7: System.out.println("Saturday");break;
+		default: System.out.println("Wrong Input");
+
+
+// Program 1==> Print 1-100 Numbers.
+
+		int a=1;
+		while (a<=100) {
+			System.out.println(a);
+			a++;        // will terminate your code a one point.
+		}
+
+// Program 2 ==> Even Numbers between 1-10.
+
+		  int a=2;
+		  
+		  while (a<=10) 
+		  { System.out.println(a); 
+		  	a=a+2; 
+		  }
+
+// Program 3 ==> Odd Numbers between 1-10.
+
+		int a=1;
+		
+		while(a<=10) {
+			System.out.println(a);
+			a=a+2;
+		}
+
+// Program 4 ==> 1-10 in decending order.
+
+		int a=10;
+		while (a>0) {
+			System.out.println(a);
+			a--;
+		}
+		

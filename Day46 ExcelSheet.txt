@@ -1,0 +1,65 @@
+## How to fetch the data from excel:- 
+============================================================================================================================
+==> Step 1:- To fetch the data from the excel sheet first we need to configure Apache poi jar files into our project.
+==> Step 2:- Create an excel sheet with some data and save it in  any drive. 
+==> Step 3:- Create an object of FileInputStream class with excel sheet path as an input.
+==> Step 4:- To open excel sheet we need to use static method i.e. create() which is present in workbookfactory class.
+==> Step 5:- To open specific sheet in an excel we need to use getsheet method.
+==> Step 6:- To identify specific row in a sheet we need to use getrow() method.
+==> Step 7:- To identify specific cell in a row we need to use getcell() method.
+==> Step 8:- To fetch string type of information we need to call getstringcellvalue() method. 
+	     To fetch Numeric type of information we need to call getNumericCellvalue() method. 
+
+e.g. FileInputStream file = new FileInputStream("Path of excel sheet");
+     String value = WorkbookFactory.create(file).getSheet("Sheet Name").getRow(int row number).getCell(int column Number).getStringCellValue();
+     System.out.print(value);
+
+
+## Program 1:- 
+=========================================================================================================================
+public class ExcelBasics {
+
+	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+		
+		FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\Automation_Test.xlsx");
+		String data = WorkbookFactory.create(file).getSheet("Sheet1").getRow(0).getCell(0).getStringCellValue();
+		System.out.println(data);
+	}
+	
+}
+
+## Program 2:- 
+=========================================================================================================================
+
+public class ExcelAdvancements {
+
+	
+public static void main(String[] args) throws EncryptedDocumentException, IOException {
+//	FileInputStream file;
+//		file = new FileInputStream("C:\\Users\\DELL\\Desktop\\Automation_Test.xlsx");
+//		String username = WorkbookFactory.create(file).getSheet("Sheet1").getRow(0).getCell(0).getStringCellValue();
+//		System.out.println(username);
+//
+//		file = new FileInputStream("C:\\Users\\DELL\\Desktop\\Automation_Test.xlsx");
+//		String password = WorkbookFactory.create(file).getSheet("Sheet1").getRow(1).getCell(1).getStringCellValue();
+//		System.out.println(password);
+
+		ArrayList al = new ArrayList();
+	
+	
+		for (int i=0; i<=9;i++) {
+			FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\Automation_Test.xlsx");
+			String data = WorkbookFactory.create(file).getSheet("Sheet1").getRow(i).getCell(0).getStringCellValue();
+			System.out.println(data);
+			al.add(data);
+		}
+		System.out.println("the size of arrylist is "+ al.size());
+
+}
+}
+
+
+
+
+
+

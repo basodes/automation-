@@ -1,0 +1,130 @@
+Webelement and related methods-
+========================================================================================================================
+webelement- It is an interface used to perform action  on the elements presents on the browser or on the webpage.
+
+## 1. Sendkeys()- This method is used to enter the text in the text field.
+## 2. Click()- This method is used to click on button or click check box or radio button.
+## 3. isEnabled()- This method is used to check if webelement is enabled on webpage or not.It will return boolean value.
+		    If the element is enabled then it will return true otherwise it will return false.
+## 4. isDisplayed()- This method is used to check weather an element is displayed on webpage or not. It will return boolean value.
+		      If the element is displayed then it will return true otherwise it will return false.
+## 5. isSelected()- This method checks that if an element is selected on the webpage or not. It returns the boolean value.
+		     It will return true if element is selected otherwise it will return false.
+## 6. gettext()-  This method returns the text part of the webelement. There are no parameters required for this method and it returns the string value.
+## 7. getattribute()- This command will help to get the any perticular attribute of the webelement. We need to pass attribute name as parameter and it will return attribute value in string.
+
+## 8. Multiple Elements:- To handle multiple elements first we need to inspect all the elements by using common xpath then by using findelements method we need to locate them on webpage and finally by providing loop we can 
+                          perform some action or get something from the element.
+
+
+// Example:- 
+
+public class WebelementCommands {
+
+	// we have located the elements but we havent performed any action.
+	// method from interface ==>  webelement.
+	// some methods ==> intraction with the webpage. ==> actions on web elements.
+	
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();  
+		driver.get("https://www.facebook.com/");
+		Thread.sleep(2000);
+		
+		
+		// 1. sendkeys():- you can send the data to the text fields.
+		
+//		WebElement Emailid = driver.findElement(By.xpath("// input[@name='email']"));
+//		Emailid.sendKeys("paresh@gmail.com");
+//		
+//		WebElement Password = driver.findElement(By.xpath("// input[@name='pass']"));
+//		Password.sendKeys("Paresh@65789");
+		
+		//2. click():-  will click on any type of button.  (regular/radio button/ check box)
+		
+//		WebElement CreateNewAccBtn = driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']"));
+//		CreateNewAccBtn.click();
+//		Thread.sleep(2000);
+//		WebElement FemaleOptbtn = driver.findElement(By.xpath("//input[@type='radio' and @value='1']"));
+//		FemaleOptbtn.click();
+//		
+		
+		// is Enabled ():-
+		// is dispayed():- 
+		// is selected():- 
+		
+		
+		// 3. is enabled():-  this will check if your element is availble to intract.
+		
+//		WebElement Emailid = driver.findElement(By.xpath("// input[@name='email']"));
+//		//System.out.println(Emailid.isEnabled());  // boolean value. // true //false.
+//	
+//		if(Emailid.isEnabled()==true) {
+//			Emailid.sendKeys("paresh@gmail.com");
+//		}else {
+//			System.out.println("The element is not intractable");
+//		}
+		
+		
+	
+//		WebElement CreateNewAccBtn = driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']"));
+//		CreateNewAccBtn.click();
+//		Thread.sleep(2000);
+//		WebElement selectpronoun = driver.findElement(By.xpath("//option[text()='Select your pronoun']"));
+//		System.out.println("selctprnoun status "+selectpronoun.isEnabled() );
+//		
+	
+		//  4. is dispayed.
+		
+//		WebElement Emailid = driver.findElement(By.xpath("// input[@name='email']"));
+//		System.out.println("Email id status "+ Emailid.isDisplayed());
+//		WebElement Password = driver.findElement(By.xpath("// input[@name='pass']"));
+//		System.out.println("Password status "+Password.isDisplayed());
+	
+	//  5. is selected.
+	
+//		WebElement CreateNewAccBtn = driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']"));
+//		CreateNewAccBtn.click();
+//		Thread.sleep(2000);
+//		WebElement FemaleOptbtn = driver.findElement(By.xpath("//input[@type='radio' and @value='1']"));
+//		System.out.println("Female option status "+ FemaleOptbtn.isSelected());  // false 
+//		FemaleOptbtn.click();
+//		System.out.println("Female option status "+ FemaleOptbtn.isSelected());   // true
+	
+	
+	// get text() :- to get the text of any element. (for single)
+	
+//	 String actualtext = driver.findElement(By.xpath("//a[@title='Sign up for Facebook']")).getText();
+//	 String expectedtext="Sign Up";
+//	 
+//	 if(actualtext.equals(expectedtext)) {
+//		 System.out.println("Test Case pass for sign up text verification");
+//	 }else {
+//		 System.out.println("Test Case fail for sign up text verification");
+//	 }
+	 
+	// get attribute.
+	
+//	String attributeid = driver.findElement(By.xpath("//input[@name='email']")).getAttribute("id");
+//	System.out.println(attributeid);
+//		
+		
+		
+		// multiple elements.
+		
+//		List<WebElement> footerlinks = driver.findElements(By.xpath("//ul[contains(@class,'uiList pageFooterLinkList')]/li/a"));
+//		System.out.println(footerlinks.size());
+//		
+//		
+//		for (int i=0; i<footerlinks.size();i++) {
+//			String footerlink = footerlinks.get(i).getAttribute("href");
+//			System.out.println(i+" "+footerlink);
+//		}
+//		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,151 @@
+// Arraylist Sorting Programs
+=============================================================================================================
+public class ArraylistSorting {
+
+	
+	public static void main(String[] args) {
+		
+		// Sorting the string.
+		ArrayList<String> cars = new ArrayList<String>();
+		cars.add("volksvagon");
+		cars.add("bmw");
+		cars.add("audi");
+		cars.add("bullet");
+		cars.add("mercedezbenz");
+		// list of cars before sorting.
+		System.out.println("Before Sorting "+cars);
+		Collections.sort(cars);     // ascending order
+		// after sorting
+		System.out.println("After Sorting "+cars);
+		// sorting cars in descending order
+		Collections.sort(cars, Collections.reverseOrder());
+		System.out.println("After Sorting in  descending "+cars);
+	
+	
+		
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		numbers.add(5);
+		numbers.add(50);
+		numbers.add(15);
+		numbers.add(25);
+		numbers.add(58);
+		numbers.add(105);
+		numbers.add(5005);
+	
+		System.out.println(numbers);
+	
+		// ascending order
+		Collections.sort(numbers);
+		System.out.println(numbers);
+	
+		// descending order
+		
+		Collections.sort(numbers, Collections.reverseOrder());
+		System.out.println(numbers);
+	
+	}
+	
+}
+
+
+
+// Program 2 vectors
+==================================================================================================================
+public class VectorExamples {
+	public static void main(String[] args) {
+		Vector vec =new Vector();
+		// add the elements
+		vec.add('A');
+		vec.add("PQR");
+		vec.add(2);
+		vec.add("Delhi");
+		vec.add("Pune");
+		vec.add(5000);
+		
+		System.out.println(vec);
+		System.out.println(vec.capacity());
+		
+		vec.set(3, "XYZ");
+		System.out.println(vec);
+		
+		vec.remove(5);
+		System.out.println(vec);
+		
+		System.out.println("Checking the emptiness:- "+ vec.isEmpty());
+		System.out.println("Checking the  size of vector :- " +vec.size());
+		
+		System.out.println(" the index of A "+ vec.indexOf('A'));
+		
+		System.out.println("Contains MEthod :- "+ vec.contains(2));
+		
+		System.out.println("to check the index :- "+ vec.get(1));
+		
+		
+//		Iterator itr = vec.iterator();
+//		while (itr.hasNext()) {
+//			System.out.println(itr.next());
+//		}
+		
+		
+//		Enumeration en = vec.elements();
+//		while (en.hasMoreElements()) {
+//			System.out.println(en.nextElement());
+//		}
+		
+		
+		 ListIterator litr = vec.listIterator();
+		while (litr.hasNext()) {
+			System.out.println(litr.next());
+		}
+		
+		
+	}
+	
+}
+
+
+
+Vector:- 
+==========================================================================================
+=> It is implementation class of List interface.
+=> It is legacy class.
+=> Default capacity of vector is 10.
+=> Incremental Capacity is (Current Capacity *2)
+=> It uses Doubly data structure.
+=> Vector is best choice for Retrival Operation.
+=> Vector is worst choice for Manipulation Operation.
+=> Extra functions/Methods:- .capacity().
+
+
+Linked List:- 
+===========================================================================================
+=> It is implementation class of List interface.
+=> It has linear datastrcture.
+=> There is no default capacity for linked list.
+=> Linkedlist is best choice for Manipulation Operation.(i.e add or remove the element)
+=> Linkedlist is worst choice for Retrival Operation.
+=> Extra Functions/Methods:- addfirst,addlast, removefirst,removelast,getfirst, getlast
+
+
+
+
+Arraylist V/s LinkedList
+================================================================================================
+		ArrayList								LinkedList
+
+1. It has resizable data structure 						1. It has Linear data structure
+2. Default Capacity is 10 							2. There is no default capacity.
+3. Best choice for Retrival Option 						3. Worst choice for Retrival Option	
+4. Worst Choice for Manipulation Option						4. Best Choice for Manipulation Option			
+
+
+
+
+Arraylist V/s Vector
+===================================================================================================
+		ArrayList								Vector
+
+1. Resizable DataStructure							1. Doubly Data Structure.
+2. Incremental Capacity= (Current Capacity *3/2+1)				2. Incremental Capacity = (Current Capacity * 2)
+3. Arraylist is not a legacy class						3. Vector is a legacy class.
+4. Performance is high								4. Performance is comparitively low.

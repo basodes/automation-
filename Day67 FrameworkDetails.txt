@@ -1,0 +1,40 @@
+Framework:- 
+=================================================================================================================
+
+==> Framework is define the set of rules or practices which we can allow in systematic way to achieve the desired results.
+
+==> Major Frameworks in Selenium.
+	1. Data Driven Testing Framework
+	2. Keyword Driven Testing Framework
+	3. Hybrid Testing Framework
+
+
+==> Data Driven Testing Framework
+=====================================================================================================================
+1. Data driven testing framework majorly work on seprating the test logic and test data from each other.
+2. It allows us to create the test automation scripts by passing the different sets of test data.
+3. The test data is kept in external files or resources such as MS excel sheets or xml files etc.
+4. The test scripts connects to the external resources to get the test data.
+5. This framework reduces the test scripts compared to the other frameworks.
+6. This framework will give more test coverage with reusable test and flexibility in execution of tests whenever required.
+7. This framework has only one drawback that it need the skilled tester in terms of coading/ programming knowledge.
+
+==> Keyword Driven Testing Framework
+=====================================================================================================================
+
+1. It is also known as table driven testing or action word based Testing.
+2. In Keyword driven testing we use table format to define keyword  or action words for each function or method that we want to execte.
+3. It performs the automation test scripts based on the keywords specified in the excel sheet. 	
+4. By using this framework testers can work with keywords to develop any test automation script.
+5. Testers with less automation knowledge can also work on this framework.
+6. The logic to read the keyword and call the required action methods in the excel sheet is placed in the main class.
+7. Working with this framework is bit easy but initial set up is requies more expertise.
+
+==> Hybrid Testing Framework
+=====================================================================================================================
+
+1. It contains combination of multiple approaches to write the test scripts.
+2. It contains combination of Data driven testing framework and keyword driven testing framework.
+3. This framework captures all good things from indivisual framework and combine it to use.
+4. It gives more flexibilty but it requires a tester with versatile knowledge. 
+5. Maintainance is quite difficult.

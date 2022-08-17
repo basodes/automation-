@@ -1,0 +1,191 @@
+Casting:- 
+
+- Converting one type of information into another is known as casting.
+
+		
+						      Casting
+							||
+				      ------------------------------------------
+				    ||						||				
+				Primitive				Non-Primitive
+			1. Implicit Casting				1. Up Casting
+			2. Explicit Casting				2. Down Casting
+			3. Boolean
+
+
+
+In Java casting is classified into two types:-
+
+1. Primitive Casting
+2. Non Primitive Casting
+
+Primitve Casting :- 
+
+Converting one data type information into another data type information is known as primitive casting.
+
+=> It is classified into three types:- 
+   
+    1. Implicit Casting
+    2. Explicit Casting
+    3. Boolean Casting
+
+
+Implicit Casting:- 
+=================================================================================
+Converting lower data type information into higher data type information is known as implicit casting. It is also known as widening.
+
+			byte==>short==>int==>long==>float==>double
+
+
+Explicit Casting:- 
+=================================================================================
+Converting higher data type information into lower data type information is known as implicit casting. It is also known as Narrowing.
+In Explicit casting data loss takes place.
+
+		    double==>float==>long==>int==>short==>byte
+
+
+
+Boolean Casting:- 
+=================================================================================
+
+It is considered as incomplitible casting in java because boolean casting is unique type of data type where information is predeclared inside it.
+
+
+
+public class PrimitiveCasting {
+
+	public static void main(String[] args) {
+		
+		// Implict:- lower to higher
+		// byte==> short ==> int  ==> long==> float==> double.
+		int a= 10;
+		System.out.println(a);
+		double b = a;
+		System.out.println(b);
+		double db = 10.5;
+		System.out.println(db);
+		int in = (int) db;
+		System.out.println(in);
+		double db1 = 10.2569876321593;
+		System.out.println(db1);
+		float f =(float) db1;
+		System.out.println(f);
+
+		// implicit casting
+		byte i =50;
+		short j =i;
+		int k =j;
+		long l=k;
+		float f1= l;
+		double dd= f1;
+		System.out.println("The byte value is "+ i);
+		System.out.println("The short value is "+ j);
+		System.out.println("The int value is "+ k);
+		System.out.println("The long value is "+ l);
+		System.out.println("The float value is "+ f1);
+		System.out.println("The double value is "+ dd);
+		
+		
+		// explicit casting
+		// double==>float==>long==> int==>  short==>byte
+		
+		double d1= 75.5;
+		float f2=  (float) d1;
+		long ll1= (long) f2;
+		int in1= (int) ll1;
+		short ss= (short) in1;
+		byte bb= (byte) ss;
+		
+		
+		System.out.println("The double value is "+ d1);
+		System.out.println("The float value is "+ f2);
+		System.out.println("The long value is "+ ll1);
+		System.out.println("The int value is "+ in1);
+		System.out.println("The short value is "+ ss);
+		System.out.println("The byte value is "+ bb);
+	}
+	
+}
+
+
+UpCasting:- 
+==================================================================================
+
+=> Assigning subclass properties to super class is known as upcasting.
+=> Before performing upcasting operation inheritance operation takes place.
+=> After performing inheritance the property which is present inside superclass comes into subclass. 
+=> In subclass programmer can declare new properties.
+=> At the time of upcasting the property which are inherited from superclass are only eligible for upcasting operation.
+=> The new properties which are declared in subclass are not eligbile for upcasting operation.
+
+
+public class Father {
+
+	public void home() {
+		System.out.println("Father Home");
+	}
+	
+	public void car() {
+		System.out.println("Father Car");
+	}
+	
+	public void money() {
+		System.out.println("Father $100");
+	}
+	
+}
+
+
+public class son extends Father {
+
+	public void bike() {
+		System.out.println("Son bike");
+	}
+	
+	public void money() {
+		System.out.println("Son $50");
+	}
+}
+
+
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		// father class refrence.
+//		Father f = new Father();
+//		f.home();
+//		f.money();
+//		f.car();
+
+		
+		// child
+//		son s = new son();
+//		s.bike();
+//		s.car();
+//		s.home();
+//		s.money();
+		
+		
+//		//upcasting
+//		Father f= new son();
+//		f.home();  
+//		f.car();
+//		f.money();    
+		
+		// downcasting.
+		
+		son s =(son) new Father();   //complie error
+		s.home();
+		s.bike();
+		s.money();
+		s.car();
+	}
+}
+
+
+
+
+

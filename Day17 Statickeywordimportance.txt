@@ -1,0 +1,150 @@
+Use of Static Keyword for Variables and Keywords:- 
+===================================================
+
+						Employee				
+								
+						int empno;				
+						String empName;				
+						int deptno;				
+						void display();				
+								
+Emp1			  Emp2			   Emp3			 Emp4			  Emp5
+								
+empno=101;		empno=102;		empno=103;		empno=104;		empno=105;
+empName=ABC;		empName=DEF;		empName=PQR;		empName=XYZ;		empName=LMN;
+empdept=10;============>empdept=10;============>empdept=10;============>empdept=10;============>empdept=10;
+display();		display();		display();		display();		display();
+
+
+=> Every Object occupy considerable amount of space in memory.
+=> Every object is independant, so if we modify a variable value in one object it will not reflect in other.
+=> to avoid this we make use of static, so if only one variable changed it will reflect throughout.
+=> It is shared with every object but memory occupies only once.
+=> If we change the value of any one object then it will reflect in all other objects.
+
+
+Methods:- 
+
+Rule 1=> Static methods can access static members directly. (without creating the object)
+Rule 2=> Static methods can also access non static members through objects only.
+Rule 3=> Non Static methods can access both static and non static members directly.
+
+
+
+
+
+Static Variables and Methods:-
+==========================================
+
+					Static 					    Non Static 
+	
+				Variables	Methods			   Variables	  	Methods
+
+Static Methods			Directly	Directly		Object Required	    Object Required
+				  (✔)		 (✔)			      (X)	          (X)
+						
+Non Static Methods		Directly	Directly		    Directly		Directly
+				 (✔)		 (✔)			     (✔)	  	  (✔)
+
+
+System.out.println():-
+===============================================
+
+System.out.println();==> This statment  is used to print an argument which is passed inside it.
+
+It is divided into 3 parts.
+
+1. System=> It is final class in java. available inside java.lang package.
+2. Out=> It is Static member of Printstream type.
+3. println()=> It is method to print the message and shift to next line.
+ 
+
+// Program -1 for static keyword
+
+public class StaticKeyword {
+
+	int empid;
+	String name;
+	static int dept;
+	
+	public void display() {
+		System.out.println(empid);
+		System.out.println(name);
+		System.out.println(dept);
+	}
+	
+	public static void main(String[] args) {
+		
+		StaticKeyword sk1= new StaticKeyword();
+		sk1.empid=101;
+		sk1.name="ABC";
+		dept=100;
+		sk1.display();
+		
+		System.out.println("=======================================================================");
+		
+		StaticKeyword sk2= new StaticKeyword();
+		sk2.empid=102;
+		sk2.name="PQR";
+		sk2.display();	
+		
+	}
+}
+
+
+
+Program 2 :-  Static and Non static method importance & rules.
+
+public class StaticExample {
+
+	static int a=10; // static
+	int b=20;  // non static
+	
+	
+	public static void m1() {
+		System.out.println(" this is static nmethod m1");
+	}
+	
+	public  void m2() {
+		System.out.println(" this is Non static nmethod m2");
+	}
+	
+	public void m3() {
+		System.out.println("=========> this is method m3");
+		
+		System.out.println(a);
+		System.out.println(b);
+		m1();
+		m2();
+	}
+	
+	public static void main(String[] args) {
+		
+		// rule 1 :- Static methods can access static members directly. (without creating the object)
+		
+		System.out.println(a);
+		m1();
+		
+		// rule 2 :- Static methods can also access non static members through objects only.
+		
+		StaticExample se = new StaticExample();
+		System.out.println(se.b);
+		se.m2();
+		
+		// rule 3 :- Non Static methods can access both static and non static members directly.
+		StaticExample se1 = new StaticExample();
+		
+		se1.m3();
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+Iframe:- 
+===================================================================================================================
+==>  Displaying webpage as a part of another webpage is known as iframe.
+==>  Iframe will be created using the tag iframe.
+
+## How to handle Iframe in selenium.
+====================================================================================================================
+
+==> To handle iframe we need to switch the selenium focus from main page to iframe.
+==> Command:- driver.switchTo().frame()
+==> We can switch to frame by using followin ways:- a. id  b.name  c. index d. webelement
+==> Once actions are performed on components present in iframe selenium will not navigate by default to main page.
+==> To navigate from iframe to main page we need to use method like a.driver.switchTo().parentFrame()  b. driver.switchTo().defaultContent()
+==> If we use driver.switchTo().defaultContent() then it will navigate from any child to main page.
+==> If we use driver.switchTo().parentFrame() then it will navigate from child to immediate parent frame.
+
+## Program 1:- 
+=======================================================================================================
+
+public class IframeHandelling {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();  
+		driver.get("https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_inner_html");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
+		//driver.switchTo().frame("iframeResult");
+		
+		WebElement iframeelement = driver.findElement(By.xpath("//iframe[@name='iframeResult']"));
+		driver.switchTo().frame(iframeelement);
+		
+		WebElement clickme = driver.findElement(By.xpath("//button[text()='Click Me!']"));
+		clickme.click();
+		
+		//driver.switchTo().parentFrame();
+		driver.switchTo().defaultContent();
+		WebElement changetheme = driver.findElement(By.xpath("//a[@title='Change Theme']"));
+		changetheme.click();
+		
+	}
+}

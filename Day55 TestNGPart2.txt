@@ -1,0 +1,89 @@
+## Basic Outputs from TestNG:- 
+=============================================================================================================================
+
+1. Basic Console
+2. TestNg Console. ==> It will include details of @Test annotations not other annotations.
+3. Reports ==> Emailable Reports/ Index.html  ==> First Run Regular Program ==> Refresh the Project ==> Search for test-output folder ==> Open and find emailable report and index.html report.
+	   ==> To add any message in report just pass message in Reporter.log("Required Message")
+
+
+#### Annotations in TestNG:- 
+==============================================================================================================================
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
+
+@ Test:- This is used for the execution of the test method.
+@ BeforeMethod:- This will execute everytime before @Test Annotation. for every @Test annotation this method will execute.
+@ AfterMethod:- This will execute everytime after @Test Annotation. for every @Test annotation this method will execute.
+@ BeforeClass:- This annotation is used for execution of few test methods before executing the test class.
+@ AfterClass:- This annotation is used for execution of few test methods after executing the test class.
+@ BeforeTest:- The method mentioned with this annotation will be executed before execution of all test methods belonging to that folder/package.
+@ AfterTest:- The method mentioned with this annotation will be executed after execution of all test methods belonging to that folder/package.
+@ BeforeSuite:- The methods mentioned with this annotation will be executed before starting of the suite. (one time execution)
+@ AfterSuite:- The methods mentioned with this annotation will be executed after ending of the suite. (one time execution)
+
+
+
+Use of Annotations:- 
+================================================================================================================================
+
+Scenario:- 01 (Login and Logout perfom before and after every Test)
+===============
+
+1. Login  	  --> @ BeforeMethod
+2. HomePageCheck  --> @ Test
+3. Logout
+4. Login
+5. ProfilePageCheck  --> @ Test
+6. Logout
+7. Login
+8. NotificationPageCheck  --> @ Test
+9. Logout  	  --> @ AfterMethod
+
+==================================================================================================================================
+
+## Program (Method Anotation Example)
+==================================================================================================================================
+
+public class MethodAnotationExample {
+
+	@BeforeMethod
+	public void login(){
+		System.out.println("******* Login *******");
+		Reporter.log("******* Login *******");
+	}
+	
+	@AfterMethod
+	public void logout(){
+		System.out.println("******* Logout *******");
+		Reporter.log("******* Logout *******");
+	}
+	
+	@Test (priority=1)
+	public void HomeElement(){
+		System.out.println("Checking the HomePage Url");
+		Reporter.log("Checking the HomePage Url");
+	}
+	
+	@Test(priority=2)
+	public void ProfileCheck() {
+		System.out.println("Checking the ProfilePage Url");
+		Reporter.log("Checking the ProfilePage Url");
+	}
+	
+	@Test(priority=3)
+	public void NotificationCheck() {
+		System.out.println("Checking the NotificationPage Url");
+		Reporter.log("Checking the NotificationPage Url");
+	}
+	
+}
+

@@ -1,0 +1,89 @@
+######################################  Verification Using TestNG ################################################################
+
+Regular Process:- 
+==================================================================================================================================
+
+	// Example :-  To verify the check box is selected or not.
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Desktop\\Selenium All Jars\\chromedriver_win32 (98)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		
+		WebElement rv = driver.findElement(By.xpath("mention the xpath"));
+		
+		if (rv.isSelected()==true) {
+			System.out.println("Check box is selected");
+		}else {
+			System.out.println("Check box is not selected");
+		}
+		
+	}
+
+
+==> If above verification process is used to verify expected result result of the testcase, length of the test case will be more and it will take more time for the execution.
+==> To Reduce the length of the test script we need to use assert class for verification which contains static method.
+
+==> Methods Present in the assert class are static methods.
+==> Assert Class==> (Hard Assert)
+==> All Static methods should be imported from org.TestNg
+
+
+######################################  Hard Assert ################################################################
+
+1. assertEquals()
+2. assertNotEquals()
+3. assertTrue()
+4. assertFalse()
+5. assertNull()
+6. assertNotNull()
+7. fail()
+
+
+1. assertEquals():- It is used to verify expected  and actual results. If both are same then output is pass otherwise fail.
+
+	String str1 ="Hello";
+	String str2 ="Hi";
+	@Test
+	public void sample() {
+	Assert.assertEquals(str1, "str2");   // ouutput==> Fail
+	}
+	
+2. assertNotEquals():- It is used to verify expected and actual results, If both results are not same then output is pass otherwise fail.
+	String str1 ="Hello";
+	String str2 ="Hi";
+	@Test
+	public void sample() {
+	Assert.assertNotEquals(str1, str2);  // Pass
+	}
+	
+3. assertTrue():- This method is used to verify conditions are true or false.If condition is true then output is pass otherwise fail.
+	@Test
+	public void sample() {
+	Assert.assertTrue(rv.isSelected());  
+	Assert.assertTrue(rv.isDisplayed());  
+	Assert.assertTrue(rv.isEnabled());  
+	}
+4. assertFalse():- It is used to verify the conditions are true or false. If condition is true then output is fail and if condition is false then output is pass.
+5. assertNull():- This method is used to verify components or textfields are empty or not.If it is empty output is pass otherwise fail.
+	String str1 ="Hello";
+	String str2 ="Hi";
+	@Test
+	public void sample() {
+	Assert.assertNull(str1);
+	}
+6. assertNotNull():-  This method is used to verify component or text field is empty or not. If it is not empty then output is pass otherwise fail.
+	String str1 ="Hello";
+	String str2 ="Hi";
+	@Test
+	public void sample() {
+	Assert.assertNotNull(str2);
+	}
+7. fail():- This method is used to intensionally fail the test method.
+	String str1 ="Hello";
+	String str2 ="Hi";
+	@Test
+	public void sample() {
+	System.out.println(str2);
+	Assert.fail();
+	}

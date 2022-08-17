@@ -1,0 +1,91 @@
+## enabled=false Keyword Example:- 
+====================================================================================================================================
+public class EnabledFlasePractice {
+
+	@BeforeMethod
+	public void Login() {
+		System.out.println("Logged in");
+	}
+	
+	@AfterMethod
+	public void Logout() {
+		System.out.println("Logged Out");
+	}
+	
+	@Test(priority =2, invocationCount=5, enabled= false)
+	public void HomePage() {
+		System.out.println("HomePage");
+	}
+	
+	@Test (priority=1)
+	public void Profilepage()  {
+		System.out.println("ProfilePage");
+	}
+	
+	@BeforeClass
+	public void LaunchBrowser() {
+		System.out.println("Browser Launched");
+	}
+	
+	@AfterClass
+	public void CloseBrowser() {
+		System.out.println("Browser closed");
+	}
+	
+}
+
+## timeouts Keyword Example:- 
+====================================================================================================================================
+
+public class EnabledFlasePractice {
+
+	@BeforeMethod
+	public void Login() {
+		System.out.println("Logged in");
+	}
+	
+	@AfterMethod
+	public void Logout() {
+		System.out.println("Logged Out");
+	}
+	
+	@Test(priority =2, invocationCount=5, enabled= false)
+	public void HomePage() {
+		System.out.println("HomePage");
+	}
+	
+	@Test (priority=1, timeOut=5000)
+	public void Profilepage() throws InterruptedException {
+		Thread.sleep(4000);
+		System.out.println("ProfilePage");
+	}
+	
+	@BeforeClass
+	public void LaunchBrowser() {
+		System.out.println("Browser Launched");
+	}
+	
+	@AfterClass
+	public void CloseBrowser() {
+		System.out.println("Browser closed");
+	}
+	
+}
+
+## InvocationCount and ThreadPoolSize Keyword Example:- 
+====================================================================================================================================
+
+public class InvocationCountWithThreadPoolSize {
+
+	@Test (invocationCount = 5, threadPoolSize = 2)
+	public void LaunchBrowser() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();   
+		driver.get("https://www.facebook.com/");
+		System.out.println(driver.getTitle());
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.close();
+		
+	}
+}

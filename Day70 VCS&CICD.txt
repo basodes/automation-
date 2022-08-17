@@ -1,0 +1,60 @@
+
+Version Control Systems
+=====================================================================================================================
+==> Version Control Systems are the software tools for tracking/managing all the changes made to the source code during the project development. 
+==> It keeps a record of every single change made to the code. 
+==> It also allows us to turn back to the previous version of the code if any mistake is made in the current version. 
+==> Without a VCS in place, it would not be possible to monitor the development of the project.
+
+
+
+CI-CD Tool ==> Continious Integration Continious Development Tool.==> Jenkinks.
+======================================================================================================================
+
+==> Jenkins is open source continious integration tool.
+==> It is cross platform can be used on windows, linux ,  Mac etc.
+==> Jenkins main use is to schedule a perticular job and monitor any job or application status.
+
+Features:- 
+===================
+
+==> It generates the list of all changes done in the repository.
+==> It can be configured to mail.
+==> We can save test report  and execution history.
+==> Jenkins support maven for building and testing a project in CI.
+==> It follows chrone pattern to schedule the job.
+
+Chrone Pattern:-
+====================
+
+==> Chrone Pattern works in Star Pattern.
+==> There are mainly 5 Stars.
+==> *****
+==> First Star ==> Indicates the Minutes in Hr ==> 0-59.
+==> Second Star ==> Indicates the Hours in Day ==> 0-23.
+==> Third Star ==> Indicates the Day of the Month ==> 1-31.
+==> Fourth Star ==> Indicates the Month of the Year ==> 0-11.
+==> Fifth Star ==> Indicates the Day of the Week ==> 0-7.  (0 and 7 both are sunday)
+
+
+
+e.g. Every Day 8 am.
+     0 8 * * *
+     Every Day 8 pm.
+     0 20 * * *
+     Every Day 4.30 pm.
+     30 16 * * *
+     Monday - Friday 6am, 10.30 am, 6pm ,10.30 pm
+     0  6 * * 1-5
+     30 10 * * 1-5
+     0  18 * * 1-5
+     30 22 * * 1-5
+     Saturday- Sunday 9 am / 9 pm
+     0  9 * * 6-7
+     0  21 * * 6-7
+     Daily every Hour
+     0 * * * *
+     Build at 8.30am on July 4:
+     30 8 4 7 *
+     Build every month at midnight of the first day of the month
+     0 0 1 * *

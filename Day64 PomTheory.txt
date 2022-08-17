@@ -1,0 +1,45 @@
+POM:- 
+----------
+
+==> It is a java design pattern used for designs of class in test script.
+==> POM strictly follows encpsulation concept.
+==> Data members should be declared globally with an access level private.
+==> Initialize the constructor with access level public.
+==> Utilize within a method with an access level public.
+
+Note:- 
+==> Number of data members that need to be created under a pom class will depends upon number of components that needs to be handle in webpage.
+==> Pom class will not contain main method to run a pom class we need another class to run the code.(either with main method or testng annotation)
+==> Test Class will contain all navigation steps to test on application.
+
+PageFactory:- 
+===========================================================================================
+
+==> It is a class which contains static methods like initelements. e.g.==> PageFactory.initElements(driver, this);
+==> To initialize data members in pagefactory we need to use initelements mehods within the constructor.
+==> Initelements wil initialize data members by identifing each component present in webpage by using @Findby annotation which takes locator type as argument.
+
+Syntax:- @Findby(locator type = "value or expression") private webelement Datamember;
+
+
+Working of PageFactory:-
+============================================================================================
+
+==> While executing the testscrpit initelements method will converts all the data members.
+==> @Findby annotation to findelement, this process is known as basic initialization or early initialization.
+
+e.g @Findby(id = "username") private webelement UserName; 
+		will be converted to
+    Webelement UserName = driver.findelement(By.id ("username"));
+
+==> To perform action on component we need call the methods.
+==> Before performing each action initelements methods will identifies component is present or not, then it will do complete initialization  this process is known as late or lazy initaialization.
+
+Disadvantages of Regular POM:- 
+=================================================================================================
+
+==> Pom will initiallize all the components before performing actions.
+==> Some time somme application may contain few components which will be hidden and display once we performed action on components that hidden component will not be displayed while pom inititalizing so it displays
+	No Such element exeception
+	Stale element refrence exception 
+==> To overcome the draw back of pom we need to use pagefactory which is an extension of it.

@@ -1,0 +1,116 @@
+Object Definitions:-
+=========================
+
+An entity that has state and behavior is known as an object e.g., chair, bike, marker, pen, table, car, etc.
+
+State: represents the data (value) of an object.
+Behavior: represents the behavior (functionality) of an object.
+
+
+
+1. An object is a real-world entity.
+2. An object is a runtime entity.
+3. The object is an entity which has state and behavior.
+4. The object is an instance of a class.
+
+
+
+new keyword in Java:-
+=========================
+The new keyword is used to allocate memory at runtime. 
+All objects get memory in Heap memory area.
+
+
+
+
+Methods in Java:-
+=====================================
+1. Regular Method  (Written in Business logic classes)
+2. Main Method ( To execute the main class)
+
+Regular Method further divied into two types:-
+
+1.Static Method.
+2.Non Static Method.
+
+// Method Writing:-
+
+1. Access Specifier
+2. data return type
+3. Method Name (Parameters List if required)
+4. Curly brackets.
+
+Static Method:- Static methods are the methods in Java that can be called without creating an object of class. 
+They are referenced by the class name itself. 
+
+Calling Static Method:- 
+Class Name. Method Name
+
+Non Static Method:- A non-static method in Java does not have the key word 'static' before the name of the method. 
+A non-static method belongs to an object of the class, and you have to create an instance of the class to access the non-static method.
+
+Calling Non Static Method:- 
+
+Creating Class Object
+Object Name. Method Name
+
+
+It may possible that a method returns a value or may not returns a value.
+If method doesnot return any value then returntype will be void.
+If method returns a value then last statement will be return statement.
+The code written after return statement will be unreachable.
+
+// Program==> Methods Call from same class.
+
+
+public class Demo {
+
+	// Methods to call from same classs.
+	// 2 static methods 2 nonstatic 
+	// call them.
+	
+	
+	public static void test1() {
+		System.out.println("This is Method one - static");
+	}
+	
+	public static void test2() {
+		System.out.println("This is Method Two- static");
+	}
+	
+	public void test3() {
+		System.out.println("This is Method Three- Nonstatic");
+	}
+	
+	public void test4() {
+		System.out.println("This is Method four- Nonstatic");
+	}
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Main method starts");
+		
+		// static method calling.
+		Demo.test1();
+		Demo.test2();
+		
+		// Non static method calling
+		
+		Demo d1= new Demo();  // declaration of an object
+		d1.test3();
+		d1.test4();
+		
+		Demo.test1();
+		Demo.test1();
+		Demo.test1();
+		System.out.println("Main Method Ends");
+		
+	}
+
+}
+
+
+
+
+
+

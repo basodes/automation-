@@ -1,0 +1,87 @@
+
+Imp Points:- 
+=========================================================================================================================================================================
+
+1. In Test class if one of the test method is failed then testng will stop execution of failed test methods. and it will continue from next methods.
+	@Test
+	public void Test1() {
+	Reporter.log("TestCase1");
+	Assert.fail();
+	}
+	
+	@Test
+	public void Test2() {
+	Reporter.log("TestCase2");
+	}
+	
+// output:- Test1==> failed
+	    Test2==> Passed
+
+2. In a test class if one of the test method failed and test method required for other test methods then other test methods will be skipped.
+
+	@Test
+	public void Test1() {
+	Reporter.log("TestCase1");
+	Assert.fail();
+	}
+	
+	@Test(dependsOnMethods = "Test1")
+	public void Test2() {
+	Reporter.log("TestCase2");
+	}
+
+// output:- Test1==> failed
+	    Test2==> Skipped
+
+
+
+
+
+######################################################### Disadvantages of Assert Class #########################################################
+
+==> If a test class containing multiple test methods and one of the test contains multiple verification point and while executing if one of the execution is failed then
+    rest of the verification will not be verified and testng will execute next method by failing verification  field method.
+
+	@Test  // hard assert.
+	public void sample1() {
+		
+		String str1 = "Hello";
+		Assert.assertEquals(str1, "Hi");      // fail
+		System.out.println(str1);
+		
+		String str2 = "Hi";
+		Assert.assertEquals(str2, "Hi");      // pass
+		System.out.println(str2);
+	}
+	
+	@Test
+	public void sample2() {
+		System.out.println("Automation");
+	}
+
+######################################  Soft Assert ################################################################
+
+==> To overcome the drawbacks of Hard asserts we need to use soft assert.
+==> It is a class which contains non static methods to do the verification.
+==> Soft Assert will do verification, if any verification is failed, notifies and executes the rest of the verification  in the test method.
+
+	@Test
+	public void sample3() {
+		SoftAssert soft = new SoftAssert();
+		
+		String str1 = "Hello";
+		soft.assertEquals(str1, "Hi");        // fail
+		System.out.println(str1);
+		
+		String str2 = "Hi";
+		soft.assertEquals(str2, "Hi");       // pass
+		System.out.println(str2);
+		soft.assertAll();
+	}
+	
+	
+	@Test
+	public void sample4() {
+		System.out.println("Automation");
+	}
+	

@@ -1,0 +1,129 @@
+Scenario:- 02 (Login and Logout Perform only once and check all functionality).
+===============
+
+1. Login  	  		--> @ BeforeClass
+2. HomePageCheck  		--> @ Test
+3. ProfilePageCheck  		--> @ Test
+4. NotificationPageCheck 	--> @ Test
+5. Logout  	  		--> @ AfterClass
+
+## Program (Class Anotation Example)
+==================================================================================================================================
+public class ClassAnotationExample {
+
+	@BeforeClass
+	public void login(){
+		System.out.println("******* Login *******");
+		Reporter.log("******* Login *******");
+	}
+	
+	@AfterClass
+	public void logout(){
+		System.out.println("******* Logout *******");
+		Reporter.log("******* Logout *******");
+	}
+	
+	@Test (priority=1)
+	public void HomeElement(){
+		System.out.println("Checking the HomePage Url");
+		Reporter.log("Checking the HomePage Url");
+	}
+	
+	@Test(priority=2)
+	public void ProfileCheck() {
+		System.out.println("Checking the ProfilePage Url");
+		Reporter.log("Checking the ProfilePage Url");
+	}
+	
+	@Test(priority=3)
+	public void NotificationCheck() {
+		System.out.println("Checking the NotificationPage Url");
+		Reporter.log("Checking the NotificationPage Url");
+	}
+	
+}
+
+
+
+
+
+@BeforeTest and  @AfterTest Annotation.
+=============================================================================================================================
+
+==========> Class 1 
+
+package TestAnnotationPractice;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class TC1 {
+
+	@BeforeTest
+	public void openDB() {
+		System.out.println("DB is opened.");
+	}
+	
+	@AfterTest
+	public void closeDB() {
+		System.out.println("DB is closed");
+	}
+	
+	@Test
+	public void m1() {
+		System.out.println("This is m1 method");
+	}
+	
+	@Test
+	public void m2() {
+		System.out.println("This is m2 method");
+	}
+	
+	@Test
+	public void m3() {
+		System.out.println("This is m3 method");
+	}
+	
+}
+
+==========> Class 2 
+
+package TestAnnotationPractice;
+
+import org.testng.annotations.Test;
+
+public class TC2 {
+
+	@Test
+	public void m4() {
+		System.out.println("This is m4 method");
+	}
+	
+	
+	@Test
+	public void m5() {
+		System.out.println("This is m5 method");
+	}
+	
+	@Test
+	public void m6() {
+		System.out.println("This is m6 method");
+	}
+}
+
+==> Right Click on Package and Run.
+
+Output:- 
+
+-->m1()
+-->m2()
+-->m3()
+-->m4()
+-->m5()
+-->m6()
+
+
+==> User can write @BeforeTest and @AfterTest in any class. TestNg will pick that automatically.

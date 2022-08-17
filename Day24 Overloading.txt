@@ -1,0 +1,139 @@
+Overloading:-
+===============================================
+1. Method overloading
+2. Constructor overloading
+3. Main Method overloading.
+
+
+Method Overloading:- 
+=====================================
+
+The two methods are said to be overloaded when both methods are having same method name but different arguments (parameters).
+(Both are in same class).
+  or
+
+A class contains multiple methods with same method name and different arguments then that methods said to be overloaded.
+
+
+=> Return type does not matter for overloading.
+=> Staticness  or non Staticness is not matter for overloading.
+=> only method name and arguments or parameters are very important.
+
+
+Overloading Can be achived by,
+
+=> changing the Number of parameters
+=> changing the data types of parameters
+
+
+
+#### Program 1:- Method Overloading
+====================================================================================================
+public class Demo {
+
+	public void sum(int a, int b) {
+		System.out.println(a+b);
+	}
+	
+	public void sum(int a, double b) {
+		System.out.println(a+b);
+	}
+	
+	public void sum(double a, double b) {
+		System.out.println(a+b);
+	}
+	
+	public void sum(double a, int b) {
+		System.out.println(a+b);
+	}
+	
+	public void sum(double a, double b,double c) {
+		System.out.println(a+b+c);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Demo d = new Demo();
+		d.sum(10, 20);
+		d.sum(10.5, 10.5);
+		d.sum(10.5, 10);
+		d.sum(10, 10.5);
+		d.sum(10.5, 5.5, 5.5);
+	}
+	
+	
+}
+
+
+
+#### Program 2:- Constructor Overloading 
+====================================================================================================
+
+public class ConstructorOverloading {
+
+	ConstructorOverloading(){
+		System.out.println("This is zero argument constructor");
+	}
+	
+	ConstructorOverloading(int a){
+		System.out.println("This is one argument constructor" + a);
+	}
+	
+	ConstructorOverloading(int a, int b){
+		System.out.println("This is two argument constructor" + a+ b);
+		
+	}
+	
+	ConstructorOverloading(int a, double b){
+		System.out.println("This is two argument constructor int- double" + a+ b);
+	}
+	
+	ConstructorOverloading(double a, double b){
+		System.out.println("This is two argument constructor double- double" + a+ b);
+	}
+	
+	ConstructorOverloading(double a, double b, int c){
+		System.out.println("This is two argument constructor double- double -int" + a+ b +c);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		ConstructorOverloading co = new ConstructorOverloading(5,10);
+	}
+}
+
+
+#### Program 3:- Main Method Overloading 
+====================================================================================================
+
+public class MainMethodOverloading {
+
+	public static void main(int x) {
+		System.out.println("Single argumented main method "+ x);
+	}
+	
+	public static void main(int x, int y) {
+		
+		System.out.println(" Two integer argumented main method "+ (x+y));
+	}
+	
+	public void main(int x, int y, int z) {
+		
+		System.out.println(" Three integer argumented main method "+ (x+y+z));
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		MainMethodOverloading mo = new MainMethodOverloading();
+		main(15);
+		main(10, 20);
+		mo.main(15, 15, 15);
+	}
+	
+}
+

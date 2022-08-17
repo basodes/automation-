@@ -1,0 +1,91 @@
+############# Linked Hashset Example
+=========================================================================================================
+public class LinkedHashsetExample {
+	public static void main(String[] args) {
+		
+		// creating linked hashset.
+		
+		LinkedHashSet lhs = new LinkedHashSet();
+		
+		// to add the elements.
+		
+		lhs.add("A");
+		lhs.add("B");
+		lhs.add("C");
+		lhs.add("D");
+		lhs.add("E");
+		lhs.add(1);
+		
+		// try to add the duplicates
+		lhs.add("A");
+		lhs.add("E");
+		System.out.println(lhs);
+		
+		System.out.println("the size is :- "+lhs.size());
+		System.out.println("check the present element :- "+ lhs.contains("A"));
+		
+		lhs.remove("E");
+		System.out.println(lhs);
+		
+		
+		System.out.println(lhs.remove(1));
+		System.out.println(lhs);
+		
+		System.out.println(lhs.remove("Z"));
+		System.out.println(lhs);
+		// iterator
+		
+		Iterator itr = lhs.iterator();
+		
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	}
+	
+}
+
+
+############# Treeset Example
+=========================================================================================================
+public class TreeSetExample {
+
+	public static void main(String[] args) {
+		
+		TreeSet ts = new TreeSet();
+		// add the elements
+		ts.add("F");
+		ts.add("E");
+		ts.add("D");
+		ts.add("C");
+		ts.add("B");
+		ts.add("A");
+		
+		// add the dulplicates.
+		ts.add("A");
+		System.out.println(ts);
+		
+		// geting the first value
+		
+		System.out.println("First value is :- "+ ts.first());
+		System.out.println("Last value is :- "+ ts.last());
+		
+		// immediate elements
+		
+		String val= "C";   //D //B
+		
+		System.out.println("Higher member "+ ts.higher(val));
+		System.out.println("Lower member "+ ts.lower(val));
+		
+		// removing first and last ==> poll
+		ts.pollLast();
+		System.out.println(ts);
+		// iterate
+		Iterator itr = ts.iterator();
+		
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+	}
+	
+}

@@ -1,0 +1,105 @@
+Program 1:- 
+==============================================================================
+public class Calculation {
+	
+	int x= 200;
+	int y=100;
+	
+	// Case -1 Method will not accept parameter and will  not return any value.
+	
+//	public void sum() {
+//		System.out.println(x+y);
+//	}
+	
+	// Case 2  method will  not accept parameter but return the value.
+
+//	public int sum() {
+//		return x+y;
+//	}
+	
+	// Case 3 - method will accept parameter but not return the value.
+	
+//	public void sum(int a,int b) {
+//		System.out.println(a+b);
+//	}
+	
+	
+	// Case 4 - Method will accept paarameters and return the value.
+	
+	public int sum(int a, int b) {
+		//int c= a+b;
+		return a+b;
+	}
+	public static void main(String[] args) {
+		
+		
+		// Case 1
+//		Calculation cal= new Calculation();
+//		cal.sum();
+		
+//		Case 2
+//		Calculation cal= new Calculation();
+//		int output =cal.sum();
+//		System.out.println(cal.sum());
+		
+		// Case 3
+//		Calculation cal= new Calculation();
+//		cal.sum(100, 200);
+//		cal.sum(10, 20);
+//		cal.sum(40, 50);
+	
+	// case 4 
+	
+		Calculation cal= new Calculation();
+		System.out.println(cal.sum(500, 500));
+	}
+	
+
+}
+
+Program 2- Calculator Project.
+======================================================================================================
+
+public class Calculator {
+
+	// + - * /     (parameters return)
+	
+	public int getsum(int a, int b) {
+		return a+b;
+	}
+	
+	public int getDifference(int a, int b) {
+		return a-b;
+	}
+	
+	
+	public int getMultiplication(int a, int b) {
+		return a*b;
+	}
+	
+	
+	public int getDivision(int a, int b) {
+		return a/b;
+	}
+	
+	public int getsumthree(int a, int b, int c) {
+		return a+b+c;
+	}
+}
+
+
+
+
+public class Calculatormain {
+
+public static void main(String[] args) {
+	Calculator cal = new Calculator();
+	
+	System.out.println(cal.getsum(200, 300));
+	System.out.println(cal.getDifference(500, 250));
+	System.out.println(cal.getMultiplication(10, 20));
+	System.out.println(cal.getDivision(50, 10));
+	System.out.println(cal.getsumthree(10, 10, 10));
+}
+}
+

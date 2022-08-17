@@ -1,0 +1,27 @@
+==> Maven Folder Structure.
+=============================================================================================================================
+
+==> Src/Main/java (This folder contains utilites/page classes/ libraries)
+
+--> new package --> com.projectname.qa.Pages
+--> new package --> com.projectname.qa.Base
+--> new package --> com.projectname.qa.Testdata
+--> new package --> com.projectname.qa.utility.
+
+==> Src/Test/java (This folder contains only testcases with testng annotation)
+
+--> new package --> com.projectname.qa.Testcases
+
+
+com.projectname.qa.Pages ==> This package contains the several pom classes such as LoginPage, SignupPage, NamePage, ContactPage etc.
+com.projectname.qa.Base ==> This package contains the base class with one time browser activites for cross browser or parallel testing.
+com.projectname.qa.Testdata ==> This package contains the excel sheets to store the test data required for the project.
+com.projectname.qa.utility ==> This pacakage contains the utility class with all one time activities such as screenshot, parameterization, javascript codes.
+com.projectname.qa.Testcases ==> This package contains testclasses for respective pages with testng annotation as per the requirement.
+
+
+Addtional Advantages of Maven:- 
+===========================================================================================================================================
+
+==> Can run testng.xml file ( to run the full suite)
+==> can run pom.xml file also by passing testng.xml file into pom.xml file.

@@ -1,0 +1,192 @@
+Inheritance:- 
+==========================================================================================
+==> It is one of the oops principle where one class acquire property of another class with extends keyword this is called as 
+    inheritance.
+==> The inheritance always taken place between two or more classes.
+
+		A   ==> parent class/super class/ base class
+		^     
+extends		| 
+		B  ==> child class/sub class/derived class.
+
+
+
+==> syntax:-  class B extends class A
+==> All the properties or variables or methods of A that will be automatically part of class B.
+==> Class A is called as parent class/ super class / base class.
+==> class B is called as child class/ sub class / derived class.
+==> Inheritance is also called as Is-relationship.
+==> The adavantage of inheritance is code reusabilty.
+==> By using extends keyword we can achieve inheritance.
+==> On child class object you can call parent class methods or variables.
+
+
+
+Types of Inheritance:- 
+=============================================================
+
+=> Single Inheritance
+=> Multilevel Inheritance
+=> Hierarchical Inheritance
+=> Multiple Inheritance
+=> Hybrid Inheritance
+
+
+Single Inheritance:- (Single Parent)
+====================================
+
+=>When the inheritance takes place between only two classes, where one class is super class and another 
+is subclass then that type of inheritance is called as single level Inheritance.
+
+				Class A
+   				   ^	
+   				   |
+				Class B
+Syntax:- 
+=========
+Class A {
+----
+----
+----
+}
+
+Class B extends A{
+-----
+-----
+-----
+}
+
+
+Multilevel Inheritance:-
+=============================================
+=> When one subclass acquire property from another superclass and that class acquire property of another superclass and 
+this phenomenon continues it is called as multilevel Inheritance.
+
+				Class A
+   				   ^	
+   				   |
+				Class B
+   				   ^	
+   				   |
+				Class C
+Syntax:- 
+=========
+Class A {
+----
+----
+----
+}
+
+Class B extends A{
+-----
+-----
+-----
+}
+Class C extends B{
+-----
+-----
+-----
+}
+
+Hirerarchical Inheritance:- 
+=====================================================
+
+=> When Multiple child classes are extended by single parent class then it called as Hierarchical Inheritance. 
+
+				Class A
+   				 ^ ^ ^	
+   		 |---------------| | |---------------|
+
+		Class B 	Class C		Class D
+Syntax:- 
+=========
+Class A {
+----
+----
+----
+}
+
+Class B extends A{
+-----
+-----
+-----
+}
+Class C extends A{
+-----
+-----
+-----
+}
+Class D extends A{
+-----
+-----
+-----
+}
+
+
+
+// Program :- Single Level Inheritance.
+#########################################################################################################################
+public class Parent {
+
+	public void m1() {
+		System.out.println("This is Parent class method");
+	}
+	
+public class Child extends Parent {
+
+	public void m2() {
+		System.out.println("This is child  classs method");
+	}
+}
+
+
+public class SingleLevel {
+
+	public static void main(String[] args) {
+		
+		// on parent refrence you can call only parent class methods/variables.
+		
+			Parent P = new Parent();
+			P.m1();
+		
+		// On child class refrence you can call parent as well as child class methods and variables.
+			Child C= new Child();
+			C.m1();
+			C.m2();
+		
+	}
+}
+
+
+// Program :- Multi Level Inheritance.
+#########################################################################################################################
+public class Parent {
+
+	public void m1() {
+		System.out.println("This is Parent class method");
+	}
+	
+public class Child extends Parent {
+
+	public void m2() {
+		System.out.println("This is child  classs method");
+	}
+}
+
+public class Grandson extends Child {
+
+	public void m3() {
+		System.out.println("This is grandson class method  for multiple inheritance");
+	}
+}
+
+public class MultilevelInheritance {
+	
+	public static void main(String[] args) {
+		
+		Grandson gs = new Grandson();
+		gs.m3();  // original class method
+		gs.m2();  // parent for grandson
+		gs.m1();  // parent for child
+	}
+}

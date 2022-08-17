@@ -1,0 +1,135 @@
+#### Keywords in TestNG
+================================================================================================================================
+1. Priority
+2. invocationCount
+3. dependsonMethods
+4. Enabled = false
+5. timeouts.
+
+
+1.priority:- To change the test method execution order we need to use keyword priority.
+
+Priority can be:- 1. by default zero 
+		  2. duplicate
+		  3. positive or negative number
+		  4. priority can not be decimal numbers or variables.
+
+
+2.invocation Count:- Some time some test methods needs to be executed multiple times which can be possible by using keyword invocation count
+		     e.g.  @Test(invocationCount=5)
+
+3. dependsonMethods:- If a single method execution depends on multiple test method then we need to use dependsonMethods keyword.
+		      e.g.  @Test(dependsonMethods ="testname")			
+		      e.g.  @Test(dependsonMethods = {"test1name","test2name"})
+4. enabled = false:- If a test class contains multiple test methods to skip one of the test method execution then we need to use this keyword.
+		      e.g. @Test(enabled = false) 
+
+5. timeouts:- If a test class contains multiple test methods if one of the test method is time consuming to execute then TestNG by default fail the test method and execute the other methods
+	      which can be possible by this keyword.
+	      e.g. @Test(timeouts = 5000)
+
+
+
+## Priority Keyword Example:- 
+====================================================================================================================================
+
+public class PriorityExmaple{
+
+	@BeforeClass
+	public void OpenUrl() {
+		System.out.println("Url is opened.");
+		Assert.assertTrue(true);
+	}
+	
+	
+	@Test (priority = 1)
+	public void Test1() {
+		System.out.println("Test1 Successful");
+	}
+	
+	@Test (priority = 2)
+	public void Test2() {
+		System.out.println("Test2 Successful");
+	}
+	
+	@Test (priority = 3)
+	public void Test3() {
+		System.out.println("Test2 Successful");
+	}
+	
+	@AfterClass 
+	public void Logout() {
+		System.out.println("Logout Successful");
+	}
+}
+
+
+## DependsonMethods Keyword Example:- 
+====================================================================================================================================
+
+public class DependsonPractice{
+
+	@BeforeClass
+	public void OpenUrl() {
+		System.out.println("Url is opened.");
+		Assert.assertTrue(true);
+	}
+	
+	
+	@Test (priority = 1)
+	public void Test1() {
+		System.out.println("Test1 Successful");
+	}
+	
+	@Test (priority = 2, dependsOnMethods = "Test1")
+	public void Test2() {
+		System.out.println("Test2 Successful");
+	}
+	
+	@Test (priority = 3, dependsOnMethods = {"Test1","Test2"})
+	public void Test3() {
+		System.out.println("Test2 Successful");
+	}
+	
+	@AfterClass 
+	public void Logout() {
+		System.out.println("Logout Successful");
+	}
+}
+
+## invocationCount Keyword Example:- 
+====================================================================================================================================
+
+public class InvocationCountPractice {
+
+	@BeforeMethod
+	public void Login() {
+		System.out.println("Logged in");
+	}
+	
+	@AfterMethod
+	public void Logout() {
+		System.out.println("Logged Out");
+	}
+	
+	@Test(priority =2, invocationCount=5)
+	public void HomePage() {
+		System.out.println("HomePage");
+	}
+	
+	@Test (priority=1)
+	public void Profilepage() {
+		System.out.println("ProfilePage");
+	}
+	
+	@BeforeClass
+	public void LaunchBrowser() {
+		System.out.println("Browser Launched");
+	}
+	
+	@AfterClass
+	public void CloseBrowser() {
+		System.out.println("Browser closed");
+	}
+	
+}

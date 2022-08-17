@@ -1,0 +1,69 @@
+##### Pop-ups Handelling
+==============================================================================================================================
+
+==> Popups are small or seprate window which will be displayed when we perform action on any component present on webpage.
+==> This popups can be handled by selenium directly but some times we may need to use third party tools to handle popups.
+
+Types of popups:- 
+
+			1.Hidden Division Popups.
+			2.Alert Popup.
+			3.Child Browser Popups.
+			4.Authentication Popup.
+			5.File Upload.
+			6.File Download.
+
+Note:- 1. If we are able to inspect element present in popup then we use selenium directly to handle that popup.
+       2. If we are unable to inspect element present in popup then we may need to use third party tools.
+
+
+## Hidden Division Popups:- 
+
+==>These Popups are colorful
+==> We Can inspect element present in popup.
+==> We Cant drag and drop 
+
+## Alert Popup:- (***)
+==========================================================================================================
+==> We cant inspect element present in alert popup
+==> We can drag and drop
+==> This type of popups generally contains OK,CANCEL button and text also.
+==> Some times it is observed that these popup will occur wigh question mark or exclametory mark.
+==> To handle alert popup we need to use alert interface which contains abstract methods like accept to click on OK button, dismiss to click on cancel button and gettext() to get text in alert popup.
+
+## Child Browser Popup:- (***)
+==========================================================================================================
+==> We can drag and drop
+==> We can inspect element present in popup.
+==> This popup will contain address field, maximize, minimize and close options.
+==> To Handle child browser popups we need to switch selenium foucus from main page to child browser or window by using syntax
+    driver.switchTo().Window()  ==>pass window id as string value.
+==> If multiple child browser are displayed then we need to identify web page address/ child browser address which is unique.
+==> To get the address of the webpage we need to use 1. getwindowhandle()  2. getwindowhandles
+==> getwindowhandle:- This method is used to get the id of the main page only.
+==> getwindowhandles:- This method is used to get Id of the main page of the main page as well as childbrowser popup.
+
+## Authentication Popup/File Upload/File Download.
+==========================================================================================================
+==> To handle this we need Auto-IT or robot class.
+
+## Program Alert-Popup.
+==========================================================================================================
+public class AlertPopup {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();   
+		driver.get("https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert");
+		Thread.sleep(2000);
+		driver.switchTo().frame("iframeResult");
+		driver.findElement(By.xpath("//button[text()='Try it']")).click();
+		Alert al = driver.switchTo().alert();
+		System.out.println(al.getText());
+		al.accept();
+		
+	}
+}
+
+

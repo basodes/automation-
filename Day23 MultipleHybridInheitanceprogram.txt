@@ -1,0 +1,108 @@
+// Program 1 :- 
+========================================================================
+
+public interface Sample1 {
+	void m1();
+	void m2();
+}
+
+public interface Sample2 {
+
+	void m3();
+	void m4();
+	
+}
+
+
+public class SampleMain implements Sample1,Sample2 {
+
+	public void m1() {
+		System.out.println(" THis is m1 method from sample 1");
+	}
+	
+	public void m2() {
+		System.out.println(" THis is m2 method from sample 1");
+	}
+	
+	public void m3() {
+		System.out.println(" THis is m3 method from sample 2");
+	}
+	
+	public void m4() {
+		System.out.println(" THis is m4 method from sample 2");
+	}
+	
+	public static void main(String[] args) {
+		SampleMain sm = new SampleMain();
+		sm.m1();
+		sm.m2();
+		sm.m3();
+		sm.m4();
+	}
+}
+
+// Program 2:- 
+========================================================================================================
+
+public interface Demo {
+	int a =20;
+	void m1();
+}
+
+public interface Demo1 {
+	int b = 50;
+	void m1();
+	
+}
+
+public class DemoMain implements Demo,Demo1 {
+	
+	public void m1() {
+		System.out.println(a);
+		System.out.println(b);
+	}
+	
+	public static void main(String[] args) {
+		DemoMain dm = new DemoMain();
+		dm.m1();
+	}
+
+}
+
+// Program 3:- 
+========================================================================================================
+
+public class PQR {
+	public void m1() {
+		System.out.println("This is  m1 method from PQR class");
+	}	
+}
+
+
+public interface B1 {
+	void m2();
+}
+
+public interface B2 {
+	void m3();
+}
+
+public class HybridInheritance extends PQR implements B1,B2   {
+	
+	public void m2(){
+		System.out.println("This is method from B1 interface");
+	}
+	
+	public void m3(){
+		System.out.println("This is method from B2 interface");
+	}
+	
+	
+	public static void main(String[] args) {
+		HybridInheritance hi = new HybridInheritance();
+		hi.m1();
+		hi.m2();
+		hi.m3();
+	}
+	
+}

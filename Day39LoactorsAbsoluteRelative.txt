@@ -1,0 +1,133 @@
+
+## Regular Locators.
+================================================================================================
+
+1. ID:- driver.findElement(By.id("id value from webstite"));
+2. Name:- driver.findElement(By.name("name value from website"));
+3. ClassName:- driver.findElement(By.className("class name value from website"));
+4. TagName:- driver.findElement(By.tagName("tagname form website"));
+5. LinkText:- driver.findElement(By.linkText("full text of the link from website"));
+6. PartialLinkText:- driver.findElement(By.partialLinkText("partial text of the link from website"));
+
+
+Xpath:- 1. Absolute
+        2. Relative
+=======================================================================================================
+(Sample Html Code)
+<html>
+<body>
+<div>
+	UN<input ="text"><br>
+	PWD<input ="password"><br>
+</div>
+
+<div>
+	Male<input type= "radio">
+	Female<input type= "radio">
+</div>
+
+<div>
+	<a href="www.paresh.com">Link1</a><br>
+	<a href="www.paresh2.com">Link2</a><br>
+	<input type="button" value="login"><br>
+</div>
+
+</body>
+</html>
+
+=======================================================================================================
+ Html-|
+      |-Body-|
+	     |
+	     |----Div[1] 
+	     |    ----input[1]  ==> UN
+	     |    ----input[2]  ==> PWD
+	     |
+	     |----Div[2] 
+	     |    ----input[1]  ==> Male
+	     |    ----input[2]  ==> Female
+	     |
+	     |----Div[3] 
+	     |    ----a[1]  ==> link[1]
+	     |    ----a[2]  ==> link[2]
+	     |	  ----input  ==> Login Button
+	
+
+
+			Absolute                 			Relative
+
+link1      	/html/body/div[3]/a[1]				//div[3]/a[1]  or // div[3]//a[1]
+LoginBtn   	/html/body/div[3]/input				//div[3]/input
+		
+	=>     It is used to navigate from root of the       => It is used to navigate from root of parent to any child 
+	       parent to its immediate child 
+        =>     To achive absolute x path we need to use      => To achive relavtive x path we need to use '//'
+	       '/'
+	=>     This is too lengthy and  time consuming	     => This is realtively less lengthy but time consuming for complex structre.
+
+
+==> This approach of absolute and relative will become more time consuming for complex structure.
+==> Hence to overcome this we go to customized x path.
+
+
+## Example Facebook.....
+==========================================================================================================================
+public class LocatorsPractice {
+
+	// basic level locators:-facebook.
+	//1. id
+	//2. name
+	//3. linked text
+	//4. partial link text
+	//5. classname
+	//6. tagname.
+
+ public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();  
+		driver.get("https://www.facebook.com/");
+		Thread.sleep(2000);
+		
+		//1. id
+		//driver.findElement(By.id("id value from the  website"));
+		driver.findElement(By.id("email"));   // usename
+		driver.findElement(By.id("pass"));    // password
+		
+		//2. name
+		//driver.findElement(By.name("the value for the name attribute"));
+		driver.findElement(By.name("email"));  // username 
+		driver.findElement(By.name("pass"));   // password
+		
+		//3. linked text. (links==> a)
+		//driver.findElement(By.linkText("full link text data"));
+		driver.findElement(By.linkText("Forgotten password?"));  // link with full text
+		
+		//4. partial link text.  (links/images => a/img)
+		driver.findElement(By.partialLinkText("password?"));     // partial text of the link that should be unique.
+		
+		// 5. classname.
+		//driver.findElement(By.className("the value for  the attribute  class from the  website"));
+		driver.findElement(By.className("inputtext _55r1 _6luy"));   // emailid
+		driver.findElement(By.className("inputtext _55r1 _6luy _9npi"));  // passwoed
+		
+		//6.tagname (when find out multiple elements with a common tag or the unique element available on webpage)
+		
+		//driver.findElement(By.tagName("tag name from the website"));
+		driver.findElement(By.tagName("button"));      // for the  single element then you have use driver.findelement
+		driver.findElements(By.tagName("a"));          // for multiple elements driver.findelements
+		
+	
+		// Xpaths.
+		//1. Absolute
+		//2. Relative xpath.
+
+		//driver.findElement(By.xpath("Pass the x path captured from website"));
+		driver.findElement(By.xpath("/html/body/div[3]/a[2]"));   // absolute.
+		driver.findElement(By.xpath("//div[3]//a[2]"));            // relative.
+	
+
+	}
+}
+
+

@@ -1,0 +1,29 @@
+User story: Testing the functionality of Relationships tab
+
+Description: Relationship tab shows data like status, subject, object  etc.
+If the particular case is of convergent billing in that case relationships tab must show 
+the data of all customers related to it.
+
+Acceptance criteria: expected result v/s actual result
+1) The subject an object should be in sync
+2) The start date/ service activation date should be as per database and in DD-MM-YYYY 
+format 
+3) when show inactive checkbox is selected, only the records having status=Inactive 
+should be displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

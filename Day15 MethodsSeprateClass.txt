@@ -1,0 +1,104 @@
+Notes:- 
+1. Main method can be in same class.
+2. Main method can be in seprate class.
+3. Main method class is very sensitive so generally we dont share and maintain in seprate class.
+4. We have to execute the main class but we can share the generic class. we dont share main class.
+5. Another people can call the required classes and create object of it.
+
+// Program Methods Call from Seprate Class:-
+===========================================================================================================
+public class Sample {
+
+	// 2 static methods
+	// 2 non static methods.
+
+	public static void m1() {
+		System.out.println("M1  Static method from sample calss");
+	}
+	
+	public static void m2() {
+		System.out.println("M2 Static method from sample calss");
+	}
+	
+	public void m3() {
+		System.out.println("M3 Non  Static method from sample calss");
+	}
+	
+	public void m4() {
+		System.out.println("M4 Non  Static method from sample calss");
+	}
+
+}
+
+public class SampleMain {
+
+	public static void main(String[] args) {
+		Sample.m1();
+		Sample.m2();
+	// Nonstatic methods.
+	
+		Sample sam= new Sample();
+		
+		sam.m3();
+		sam.m4();
+		
+		// static methods.
+		Sample.m1();
+		Sample.m2();
+		
+		Sample sam2= new Sample();
+		
+		sam2.m3();
+		sam2.m4();
+	}
+}
+
+
+
+
+==> Example 2 Employee Data =============================================================================================
+
+public class Employee {
+
+	// variables Declaration.
+	int empid;
+	String empname;
+	double empSal;
+	int empdept;
+	String empjob;
+	
+	public void display() {
+		
+		System.out.println("Empid "+empid);
+		System.out.println("empname "+empname);
+		System.out.println("empSal "+empSal);
+		System.out.println("empdept "+empdept);
+		System.out.println("empjob "+empjob);
+		
+	}
+}
+
+
+
+public class Employeemain {
+	public static void main(String[] args) {
+		
+		Employee emp1= new Employee();  // object creation of employee class.
+		emp1.empid=101;
+		emp1.empname="ABC";
+		emp1.empSal=22369.70;
+		emp1.empdept=05;
+		emp1.empjob="Developer";
+		emp1.display();
+		
+		System.out.println("====================================================================");
+		
+		Employee emp2= new Employee();  // object creation of employee class.
+		emp2.empid=102;
+		emp2.empname="CDE";
+		emp2.empSal=45369.70;
+		emp2.empdept=03;
+		emp2.empjob="Tester";
+		emp2.display();
+	}
+}

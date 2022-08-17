@@ -1,0 +1,139 @@
+## Waits in Selenium....
+===================================================================================================================
+
+==> Waits are command in selenium that are very important in executing the testscripts.
+==> During automation testing multiple issues may occur due to variation in time lag due to loading of webelements. wait commands help to resolve this issue.
+==> when a page loads on browser, various webelements on it may load at different time interval.
+==> wait commands dynamically handle this situation and wait for some time until the element is loaded. it will not directly fail the script.
+
+There are three important waits in selenium.
+1.Implicit wait
+2.Explicit wait
+3.Fluent wait
+
+
+1. Implict Wait:-
+===================================== 
+==> Implicit Wait directs the Selenium WebDriver to wait for a certain measure of time before throwing an exception. 
+==> Once this time is set, WebDriver will wait for the element before the exception occurs.
+==> Once the command is in place, Implicit Wait stays in place for the entire duration for which the browser is open. 
+==> It’s default setting is 0
+==> It is applicable for every element.
+
+
+Syntax:- driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+
+2. Explicit Wait:- 
+===================================== 
+==> Explicit Wait is important in cases where there are certain elements that naturally take more time to load. 
+==> If one sets an implicit wait command, then the browser will wait for the same time frame before loading every web element. 
+==> This causes an unnecessary delay in executing the test script.
+ 
+ex. 		   WebDriverWait wait = new WebDriverWait(driver,30);
+		   wait.until(ExpectedConditions.elementToBeClickable(By.xpath("mention x path"))).click();
+
+==> choose any required method from the list according to requirement.
+
+3. Fluent Wait.
+===================================== 
+==> Fluent Wait in Selenium marks the maximum amount of time for Selenium WebDriver to wait for a certain condition (web element) becomes visible. 
+==> It also defines how frequently WebDriver will check if the condition appears before throwing the “ElementNotVisibleException”.
+==> Fluent Wait commands are most useful when interacting with web elements that can take longer durations to load.
+
+Syntax:-				      Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+					     .withTimeout(timeout, SECONDS)
+					     .pollingEvery(timeout, SECONDS)
+					     .ignoring(Exception.class);
+
+			WebElement element=wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement applyy(WebDriver driver) {
+			return driver.findElement(By.xpath("mention x path");
+			}
+		        });
+			
+			element.action(do action  whaterver you want such as element.click or sendkeys etc.)
+
+if time out is depreciated then use:- 
+
+			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		       .withTimeout(Duration.ofSeconds(30))
+		       .pollingEvery(Duration.ofSeconds(2))
+		       .ignoring(NoSuchElementException.class);
+
+
+
+
+
+
+
+
+## Program 01:- 
+========================================================================================================================================
+public class WaitsinSelenium {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		  
+		// using implicit wait
+		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // browser.
+		 WebElement CreateNewAccBtn = driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']"));
+		  CreateNewAccBtn.click();
+		  
+		  // using explicit wait.
+		  WebDriverWait wait = new WebDriverWait(driver,30); // implicit wait==> thisis applicable to all next elements.
+		  WebElement singupbtn =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@name='websubmit']"))); 
+		  singupbtn.click();
+
+	}
+
+}
+
+
+
+
+## Program 02:-
+=============================================================================================================
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
+import com.google.common.base.Function;
+
+public class fluentwaits {
+
+	public static void main(String[] args) {
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		
+		 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+			       .withTimeout(Duration.ofSeconds(30))
+			       .pollingEvery(Duration.ofSeconds(5))
+			       .ignoring(NoSuchElementException.class);
+
+			   WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			     public WebElement apply(WebDriver driver) {
+			       return driver.findElement(By.xpath("//button[@name='websubmit']"));
+			     }
+			   });
+
+		element.click();	
+		
+	}
+}
+
+

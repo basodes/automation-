@@ -1,0 +1,59 @@
+Agenda 
+• What is Software Testing?
+• Challenges in manual testing 
+• How does automation tools work? 
+• What is selenium? 
+• Advantages of Selenium 
+• Disadvantages/Limitations of Selenium 
+• Selenium Versions
+
+
+Application Types:- 
+1. Web Based
+2. Desktop Based/Window Based
+3. Mobile Application.
+
+Challenges in Manual Testing.
+1. Re- Testing    ==> Testing the application with different set of test data
+2. Regression Testing ==> Testing the impact of newly developed functionality on old functionality.
+
+
+How Automation Tool Works
+
+Manual Tester==> Testcase ==> Check the Application
+
+Automation Tester==> TestScripts (using java in selenium)  ==> Check the Application
+
+
+• What is selenium? 
+
+Selenium
+ Selenium is web based automation tool
+ Selenium is open Source.(Free)
+ Selenium has multiple components (IDE, RC, Web driver, Grid)
+
+• Advantages of Selenium 
+
+Advantages:-
+It is open source tool.
+It supports multiple operating systems. (Windows/Mac/Linux etc.)
+It supports multiple Languages (java, python, C#, Ruby)
+It can integrate with third party tools. (Apache Poi, Auto IT, Sikuli, Extent Reporter)
+
+
+• Disadvantages/Limitations of Selenium 
+
+It cannot automate Windows/Desktop based application (Auto IT, Sikuli)
+Reporting System is not available directly. (TestNG, Extent Reporter)
+Not Supporting Access to excel files directly (Apache Poi)
+Graphs are not generated.
+Selenium doesnot support to captcha.
+Selenium doesnot support to file uploading and downloading.
+
+• Selenium Versions
+
+Selenium 1.X  IDE (Firefox), RC, Grid ==> Selenium IDE
+Selenium 2.X  IDE (Firefox), Web driver, Grid ==> Selenium RC
+Selenium 3.X  IDE (Multiple), Web driver, Grid ==> Selenium Webdriver.
+
+3.141.59

@@ -1,0 +1,137 @@
+Overriding:- 
+=========================================================================================
+
+=> Acquiring superclass property into subclass and changing the implementation of subclass based on 
+   subclass specification is known as Method overriding.
+=> Through inheritance whatever method parent class has by default available to child class. the child can directly 
+   use same method without rewritting.
+=> If child class is not satisfied with the parent class implementation, then child class is allowed to redefine the same method 
+   again in child class based on requirement such type of concept is called as overriding.
+
+Rules:- 
+================================================================
+1. Method should have same name in both parent and child class.
+2. Method should have same number and sequnece of parameters as that of parent in child.
+
+
+
+Notes:- 
+==================================================================
+1. Method with static keyword can not override.(It will be a case of method hiding)
+2. Method with  final keyword can not be override.
+3. Method with private keyword can not be override.
+4. Constructors can not be override.
+5. Main method can not be override.
+
+
+#### Program 1:-
+=========================================================================================================
+public class Parent {
+
+	public void property() {
+		System.out.println("Home | Cash | Car");
+	}
+	
+	public void Marriage() {
+		System.out.println("Arrange Marriage");
+	}
+}
+
+
+public class Child extends Parent {
+	public void Marriage() {
+		System.out.println("Love Marriage");
+	}
+}
+
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		
+		Parent p = new Parent();
+		p.property();
+		p.Marriage();   
+	
+		Child c = new Child();
+		c.property();
+		c.Marriage();
+	}
+}
+
+#### Program 2:-
+=========================================================================================================
+
+public class RBI {
+
+	public double rateofintrest() {
+		return 6.00;
+	}
+	
+	public double personalloanintrest() {
+		return 11.5;
+	}
+}
+
+public class SBI extends RBI{
+
+	public double rateofintrest() {
+		return 6.5;
+	}
+}
+
+public class HDFC extends RBI {
+
+	public double rateofintrest() {
+		return 7.00;
+	}
+	
+}
+
+public class Methodoverriding {
+	
+	public static void main(String[] args) {
+		
+		SBI s = new SBI();
+		System.out.println(s.rateofintrest());
+		System.out.println(s.personalloanintrest());
+		
+		HDFC h = new HDFC();
+		System.out.println(h.rateofintrest());
+		
+	}
+
+}
+
+
+Polymorphism:- 
+========================================================================
+=> One object showing different behaviour at different stages of life cycle this is known as polymorphism.
+
+Types:- 
+=======================
+1.Compile time polymorphism. (also called as static polymorphism/early binding.)
+2.Run time polymorphism. (also called as dynamic polymorphism/late binding.)
+
+
+
+
+			Compile Time Polymorphism  						Run Time Polymorphism
+
+1. In compile time polymorphism method declaration and definition 		1. In compile time polymorphism method declaration and definition 
+   are binded during compilation based on arguments.				   are binded during run time based on object creation.
+
+2. This is known as static polymorphism.					2. This is known as dynamic polymorphism.
+
+3. This is known as early binding.						3. This is known as Late binding.
+	
+4. Ex. Method Overloading							4. Ex. Method Overriding
+
+
+
+
+
+
+
+
+

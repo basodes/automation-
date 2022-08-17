@@ -1,0 +1,172 @@
+Constructor:- 
+===============================================
+
+==> Constructor is a special member of a class used to initialize the data members of class.
+==> Constructor concept is specially designed to perform initialization of an object.
+==> Constructor can be used to initialize the class variables.
+==> For every object constructor will be executed seprately.
+==> Constructor name should be as same as class name.
+==> Return type concept is not applicable for constructor. (not even void)
+==> Constructor is invoked at the time of object creation only.
+==> Any number of constructors can be created in the class, but its name should be equal to class name. only arguments should be different.
+
+Constructor can be of two types:-  
+				1. Default Constructor
+				2. User Defined Constructor.
+
+Default Constructor:- 
+==========================
+=> If the constructor is not declared in java then at the time of compilation compiler will provide constructor for a class.
+=> Compiler is responsible to generate default constructor.
+=> If compiler is generating constructor then it is no argument constructor.
+=> Default constructor has access modifier as same as that of class.
+
+
+User Defined Constructor:-
+==========================
+ 
+There are two types of User Defined Constructor:-
+				
+				1. Zero Argument Constructor.
+				2. Constructor with arguments.
+
+=> If programmer has declared constructor in java class then it is considered as user defined constructor.
+=> If programmer has declared constructor then compiler will not provide constructor.
+
+
+Important Note:- 
+==========================
+1. Inheritance and overridding is not applicable for constructors.
+2. Only overloading of constructors is possible.
+3. We can not create constructor for interface as all variables are public static and final.
+4. Every class including abstract class has constructor.
+
+
+
+Difference between Method and Constructor:- 
+
+		Methods								Constructors
+
+1. Method name can be anything.					1. Constructor name is as same as class name.
+2. Method can return value.					2. Constructor does not return anything.
+3. Method needs to be called explicitly.			3. Constructor is automatically invoked at the time of object creation.
+4. Methods are used to write logic 				4. Constructors are used to initialize the variables only.
+
+
+
+Example 1:- 
+=================================================================================================================================
+public class Demo {
+
+	int a;
+	String str;
+	
+	Demo(){
+		System.out.println("This is zero argument constructor.");
+		a=10;
+		str="velocity";
+	}
+	
+	Demo(int c,String d){
+		System.out.println("This is with argument constructor");
+		a=c;
+		str =d;
+	}
+	
+	Demo(String d, int c){
+		System.out.println("This is with argument constructor");
+		a=c;
+		str =d;
+	}
+	public void test() {
+		System.out.println(a);
+		System.out.println(str);
+	}
+}
+
+======================================================================================
+
+public class DemoMain {
+
+public static void main(String[] args) {
+	
+//	Demo d = new Demo();
+//	d.test();
+	
+//	Demo d1= new Demo(100, "8th jan batch");
+//	d1.test();
+	
+	Demo d2 = new Demo("ABCD",25);
+	d2.test();
+	
+}
+}
+
+
+Example 2 :- 
+=================================================================================================================================
+public class Student {
+
+	int rollno;
+	String sname;
+	char grade;
+	
+	// by using constructor for approach 3 in main
+	Student(int rn,String sn,char ch){
+		rollno=rn;
+		sname=sn;
+		grade= ch;
+	}
+	
+	// by using method for approch 2 in main
+	public void getstudentdetails(int rn,String sn,char ch) {
+		rollno=rn;
+		sname=sn;
+		grade= ch;
+	}
+	
+	// to print the values.
+	public void display() {
+		System.out.println("The Student Rollno is "+ rollno);
+		System.out.println("The Student name is "+ sname);
+		System.out.println("The Student grade is "+ grade);
+	}
+	
+}
+
+
+*********************************************
+
+public class StudentMain {
+
+	public static void main(String[] args) {
+		
+		// initialization by object.
+		// approach 1
+//		Student s = new Student();
+//		s.rollno=101;
+//		s.sname="ABC";
+//		s.grade='c';
+//		s.display();
+		
+		// approach 2.
+//		System.out.println("==========================================================");
+//		Student s1 = new Student();
+//		s1.getstudentdetails(102, "xyz", 'A');
+//		s1.display();
+		
+		// approch 3 constructor
+		
+		Student s3= new Student (103,"PQR",'A');
+		s3.display();
+		
+	}
+}
+
+
+
+
+
+
+
+

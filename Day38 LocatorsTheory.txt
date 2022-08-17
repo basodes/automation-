@@ -1,0 +1,24 @@
+Locators:- 
+=======================================================================
+==> Locators are used to indentify an element present on the webpage with the help of locator types.
+==> To identify  an element present on webpage we need to use findelement method which is present in webdriver interface.
+==> Findelement method will identify an element with the help of class which contains static method.
+==> All the static methods present in by class are known as locators.
+
+
+						Locators (Regular)
+						    |
+	 --------------------------------------------------------------------------------------
+	|		|			     |			   |		       |
+       ID             Name	    Linked Text/Partial Link Text      Class Name	     Tag Name
+
+
+					  Customized Locators 
+						    |
+	 --------------------------------------------------------------------------------------
+	|										      |
+      Xpath (Absolute/Relative/Customized)						 CSS Selector
+											 1. Tag & ID
+											 2. Tag & class
+											 3. Tag & attribute
+											 4. Tag class & attribute

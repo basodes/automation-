@@ -1,0 +1,48 @@
+Day-2
+------
+Java installation on windows Operating System
+Download and install Eclipse for Selenium.
+--------------
+
+
+Step1: Download Java
+--------------
+==> Go to Google
+==> Search for Java JDK
+==> Scroll down for Java 8 version
+==> Select Operating System as windows
+==> download X32 or X64 installer.
+
+Step2: Install java using .exe file
+
+==> Prefer word document with screen shots.
+==> Go to C drive ==> Program files==> check Java folder is generated. 
+	
+Step3: Configure Java path
+
+==> Copy the path of bin folder
+eg. C:\Program Files\Java\jdk1.8.0_151\bin
+
+Right click on myPC-->Properties-->Advanced system settings-->Environment varaibles-->system settings
+-->path variable-->new buton-->provide path of java-->Ok
+
+Step4: check java is properly Installed and configured on your system
+==>open command window (cmd)
+==> check by hitting command java -version
+
+
+Download and install Eclipse
+----------------------------
+Eclipse is an IDE for java.
+
+1) Go to Google
+2) Eclipse for Java developers
+3) More Downloads
+4) Download Stable Version
+5) Select Operating System
+6) Download
+7) Follow the screen shots to install.
+
+
+
+

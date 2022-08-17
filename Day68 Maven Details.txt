@@ -1,0 +1,43 @@
+==> Maven Project
+=====================================================================================================================
+
+==> What is Maven?
+==> Maven is a popular open source build tool developed by the apache group to build, publish  and deploy several project at once for better project management.
+
+==> What is pom.xml in Maven?
+==> Project object Model:- It is a Maven project xml file.
+    The Pom.xml file contains information of project and configuration information for the maven to build the project such as dependencies, build directory, source directory, test source directory , plugins etc.
+    Maven Project reads the pom.xml and executes the goal.
+
+==> Problems without Maven Project:-
+=========================================================================================================================
+
+==> Adding a set of jars in each project--> It consumes great space and makes project heavy so it may create the issue while sharing the project.
+==> Creating the right project structure--> Maven provides the standard project structure which is very easy to maintain the test scripts.
+==> Building and deploying the project--> We must have to build and deploy the project so that it may work.
+
+Maven Project Setup:-
+==============================================================================================================================
+
+--> Create New Maven Project --> File--> New--> Other--> Maven Project--> catlogue --> all catlogue --> select filter --> maven-archtype-quickstart --> click on search results--> Next
+
+--> Groupid --> project Name
+--> Artifact Id --> Project Name or project related name.
+
+--> Maven Project will be created. --> Delete the dummy folders.
+--> Keep important folders and files such as --> src/main/java, src/test/java, pom.xml.
+
+--> Go to pom.xml --> add the required dependencies.
+
+--> some important dependancies.
+    --> selenium webdriver 3.141.59 dependencies
+    --> testng dependencies --> 6.1.1
+    --> apache poi --> 5.2.0
+    --> poi-ooxml  --> 5.2.0
+    --> commons-compress --> 1.21
+    --> xml beans  --> 5.0.3
+    --> poi-ooxml-schemas --> 4.1.2
+    --> commons-collection4 --> 4.4
+ 
+
+Note:- If TestNg compilation issues faced then click to dependencies tab in pom.xml --> select testng --> change the scope to compile.

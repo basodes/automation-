@@ -1,0 +1,149 @@
+Method Hiding:- 
+=================================================================================================================================================
+Method hiding can be defined as, "if a subclass defines a static method with the same signature as a static method in the super class, in such a case, 
+the method in the subclass hides the one in the superclass." 
+The mechanism is known as method hiding. It happens because static methods are resolved at compile time.
+
+#### Program:- 
+
+public class demo {
+	public void m1() {
+		System.out.println("this is method m1 parent class");
+	}
+	public static void m2() {
+		System.out.println("this is static method m2 from parent class");
+	}
+}
+
+public class demo1 extends demo {
+	public void m1() {
+		System.out.println("this is method m1 child class");
+	}
+	
+	public static void m2() {
+		System.out.println("this is static method m2 from child class");
+	}
+	
+}
+
+public class Sample {
+
+	public static void main(String[] args) {
+		
+		// object Creations.
+		demo d =new demo();
+		demo1 d1= new  demo1();
+		// upcasting object.
+		demo d11 = new demo1();
+		
+		
+		// non static methods => upcasting  approach ==> child classes methods.
+		// calling non static methods
+		d.m1();    // parent class.
+		d1.m1();    // child class.
+		// casting approach (object casting)
+		d11.m1();       // child class/
+		
+		// static Methods
+		System.out.println("=================================================================================");
+		d.m2();      // parent class/
+		d1.m2();     // child class
+		d11.m2();    // child XXXXXXXXXXXXXX  parent. method hiding
+	}
+}
+
+
+
+Generalization:- 
+========================================================================================
+1. Extracting all the common properties from subclass and declaring it in superclass and providing implementation according to subclass 
+   specification in subclass is known as generalization.
+2. Generalization file can be regular java class, or abstract class or interface but recomended is interface only.
+
+
+public interface sim {
+	void internet();
+	void calling();
+	void sms();
+	
+}
+
+public class idea implements sim {
+
+	public void internet() {
+		System.out.println("1GB/day");
+	}
+
+	public void calling() {
+		System.out.println("100calls/day");
+	}
+
+	public void sms() {
+		System.out.println("50sms/day");
+	}
+}
+
+public class jio implements sim {
+
+	public void internet() {
+		System.out.println("2GB/day");
+	}
+
+	public void calling() {
+		System.out.println("50calls/day");
+	}
+
+	public void sms() {
+		System.out.println("100sms/day");
+	}
+	
+	public void amazonPrime() {
+		System.out.println("Amazon Prime");
+	}
+	
+}
+
+public class Airtel implements sim {
+
+	public void internet() {
+		System.out.println("1.5GB/day");
+	}
+
+	public void calling() {
+		System.out.println("75calls/day");
+	}
+
+	public void sms() {
+		System.out.println("75 sms/day");
+	}
+}
+
+public class CompanyMain {
+
+	public static void main(String[] args) {
+		
+		idea i = new idea();
+		i.calling();
+		i.sms();
+		i.internet();
+		System.out.println("----------------------------------------------------------");
+		jio j = new jio();
+		j.amazonPrime();
+		j.sms();
+		j.calling();
+		j.internet();
+		System.out.println("----------------------------------------------------------");
+		Airtel a= new Airtel();
+		a.calling();
+		a.sms();
+		a.internet();
+	}
+}
+
+
+
+
+
+
+
+

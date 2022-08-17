@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" parallel="none">
+  <test name="Test(failed)" parallel="none" preserve-order="false">
+    <classes>
+      <class name="com.projectname.qa.TestCases.RegistrationTest">
+        <methods>
+          <include name="FacebookRegistrationPageTest"/>
+          <include name="setup"/>
+        </methods>
+      </class>
+      <class name="com.projectname.qa.TestCases.LoginTest">
+        <methods>
+          <include name="setup"/>
+          <include name="FacbookLoginPageTest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

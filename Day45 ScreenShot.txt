@@ -1,0 +1,65 @@
+// How to take screen shot using selenium
+====================================================================================================================
+==> To take screen shot using selenium using we need to typecast the driver object to takescreenshot interface. e.g. ((TakesScreenshot)driver)
+==> Then we need to call the method i.e. getScreenshotAs().
+==> Then we need to pass the argument as OutputType.FILE.
+==> This method will return object of file type.
+==> File SrcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+==> When this statement will execute it will take screenshot but screenshot will be availble inside the memory.
+==> To store screen shot in local drive, we need to call the method i.e. copyFile() which is present inside fileutils class.
+==> Finally this method will accept two parameters i.e. source and destination.  
+==> FileUtils.copyFile(SrcFile, new File("location to store the screenshot along with name and file type. i.e. jpg or png"));
+
+
+
+## Program 1
+==================================================================================================
+
+public class GeneralScreenshot {
+	
+	public static void main(String[] args) throws IOException {
+	
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();  
+	driver.get("https://www.facebook.com/");
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	File dest = new File("C:\\Users\\DELL\\Desktop\\Velocity_Katraj\\facebookts.png");
+	FileUtils.copyFile(src, dest);
+}
+	
+}
+
+
+
+## Program 2
+==================================================================================================
+public class ScreeshotAdvance {
+	
+	public static WebDriver driver;
+	public static void getscreenshot() throws IOException {
+		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Date d= new Date();
+		System.out.println(d);
+		String filename = d.toString().replace(" ", "_").replace(":", "_")+".png";
+		File dest = new File("C:\\Users\\DELL\\Desktop\\facebookts_"+filename);
+		FileUtils.copyFile(src, dest);
+	}
+	
+	
+	public static void main(String[] args) throws IOException, InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\Driver_98\\chromedriver.exe");
+		driver = new ChromeDriver();  
+		driver.get("https://www.facebook.com/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		getscreenshot();
+		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
+		
+		Thread.sleep(5000);
+		getscreenshot();
+	}
+	
+}

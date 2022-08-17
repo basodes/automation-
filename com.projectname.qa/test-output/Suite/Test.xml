@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="DESKTOP-888A2JB" name="com.projectname.qa.TestCases.LoginTest" tests="2" failures="0" timestamp="9 Aug 2022 04:19:02 GMT" time="7.987" errors="0">
+  <testcase name="@BeforeClass setup" time="0.0" classname="com.projectname.qa.TestCases.LoginTest">
+    <failure type="org.openqa.selenium.SessionNotCreatedException" message="session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 103.0.5060.114 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: &amp;apos;3.141.59&amp;apos;, revision: &amp;apos;e82be7d358&amp;apos;, time: &amp;apos;2018-11-14T08:17:03&amp;apos;
+System info: host: &amp;apos;DESKTOP-888A2JB&amp;apos;, ip: &amp;apos;192.168.1.5&amp;apos;, os.name: &amp;apos;Windows 10&amp;apos;, os.arch: &amp;apos;amd64&amp;apos;, os.version: &amp;apos;10.0&amp;apos;, java.version: &amp;apos;1.8.0_231&amp;apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01187413+2389011]
+	Ordinal0 [0x01119F61+1941345]
+	Ordinal0 [0x0100C658+837208]
+	Ordinal0 [0x0102C773+968563]
+	Ordinal0 [0x0102837A+951162]
+	Ordinal0 [0x01025C51+941137]
+	Ordinal0 [0x01058C80+1150080]
+	Ordinal0 [0x010588DA+1149146]
+	Ordinal0 [0x01053F66+1130342]
+	Ordinal0 [0x0102E546+976198]
+	Ordinal0 [0x0102F456+980054]
+	GetHandleVerifier [0x01339632+1727522]
+	GetHandleVerifier [0x013EBA4D+2457661]
+	GetHandleVerifier [0x0121EB81+569713]
+	GetHandleVerifier [0x0121DD76+566118]
+	Ordinal0 [0x01120B2B+1968939]
+	Ordinal0 [0x01125988+1989000]
+	Ordinal0 [0x01125A75+1989237]
+	Ordinal0 [0x0112ECB1+2026673]
+	BaseThreadInitThunk [0x76A2FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7A6E+238]
+">
+      <![CDATA[org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 103.0.5060.114 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-888A2JB', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01187413+2389011]
+	Ordinal0 [0x01119F61+1941345]
+	Ordinal0 [0x0100C658+837208]
+	Ordinal0 [0x0102C773+968563]
+	Ordinal0 [0x0102837A+951162]
+	Ordinal0 [0x01025C51+941137]
+	Ordinal0 [0x01058C80+1150080]
+	Ordinal0 [0x010588DA+1149146]
+	Ordinal0 [0x01053F66+1130342]
+	Ordinal0 [0x0102E546+976198]
+	Ordinal0 [0x0102F456+980054]
+	GetHandleVerifier [0x01339632+1727522]
+	GetHandleVerifier [0x013EBA4D+2457661]
+	GetHandleVerifier [0x0121EB81+569713]
+	GetHandleVerifier [0x0121DD76+566118]
+	Ordinal0 [0x01120B2B+1968939]
+	Ordinal0 [0x01125988+1989000]
+	Ordinal0 [0x01125A75+1989237]
+	Ordinal0 [0x0112ECB1+2026673]
+	BaseThreadInitThunk [0x76A2FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7A6E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Unknown Source)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.findFirst(Unknown Source)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+	at com.projectname.qa.Base.TestBase.intializeBrowser(TestBase.java:16)
+	at com.projectname.qa.TestCases.LoginTest.setup(LoginTest.java:23)
+... Removed 29 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="@AfterClass teardown" time="0.0" classname="com.projectname.qa.TestCases.LoginTest">
+    <skipped/>
+  </testcase>
+  <testcase name="@BeforeClass setup" time="0.0" classname="com.projectname.qa.TestCases.RegistrationTest">
+    <failure type="org.openqa.selenium.SessionNotCreatedException" message="session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 103.0.5060.114 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: &amp;apos;3.141.59&amp;apos;, revision: &amp;apos;e82be7d358&amp;apos;, time: &amp;apos;2018-11-14T08:17:03&amp;apos;
+System info: host: &amp;apos;DESKTOP-888A2JB&amp;apos;, ip: &amp;apos;192.168.1.5&amp;apos;, os.name: &amp;apos;Windows 10&amp;apos;, os.arch: &amp;apos;amd64&amp;apos;, os.version: &amp;apos;10.0&amp;apos;, java.version: &amp;apos;1.8.0_231&amp;apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01187413+2389011]
+	Ordinal0 [0x01119F61+1941345]
+	Ordinal0 [0x0100C658+837208]
+	Ordinal0 [0x0102C773+968563]
+	Ordinal0 [0x0102837A+951162]
+	Ordinal0 [0x01025C51+941137]
+	Ordinal0 [0x01058C80+1150080]
+	Ordinal0 [0x010588DA+1149146]
+	Ordinal0 [0x01053F66+1130342]
+	Ordinal0 [0x0102E546+976198]
+	Ordinal0 [0x0102F456+980054]
+	GetHandleVerifier [0x01339632+1727522]
+	GetHandleVerifier [0x013EBA4D+2457661]
+	GetHandleVerifier [0x0121EB81+569713]
+	GetHandleVerifier [0x0121DD76+566118]
+	Ordinal0 [0x01120B2B+1968939]
+	Ordinal0 [0x01125988+1989000]
+	Ordinal0 [0x01125A75+1989237]
+	Ordinal0 [0x0112ECB1+2026673]
+	BaseThreadInitThunk [0x76A2FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7A6E+238]
+">
+      <![CDATA[org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 103.0.5060.114 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-888A2JB', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x01187413+2389011]
+	Ordinal0 [0x01119F61+1941345]
+	Ordinal0 [0x0100C658+837208]
+	Ordinal0 [0x0102C773+968563]
+	Ordinal0 [0x0102837A+951162]
+	Ordinal0 [0x01025C51+941137]
+	Ordinal0 [0x01058C80+1150080]
+	Ordinal0 [0x010588DA+1149146]
+	Ordinal0 [0x01053F66+1130342]
+	Ordinal0 [0x0102E546+976198]
+	Ordinal0 [0x0102F456+980054]
+	GetHandleVerifier [0x01339632+1727522]
+	GetHandleVerifier [0x013EBA4D+2457661]
+	GetHandleVerifier [0x0121EB81+569713]
+	GetHandleVerifier [0x0121DD76+566118]
+	Ordinal0 [0x01120B2B+1968939]
+	Ordinal0 [0x01125988+1989000]
+	Ordinal0 [0x01125A75+1989237]
+	Ordinal0 [0x0112ECB1+2026673]
+	BaseThreadInitThunk [0x76A2FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778A7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x778A7A6E+238]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Unknown Source)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.findFirst(Unknown Source)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+	at com.projectname.qa.Base.TestBase.intializeBrowser(TestBase.java:16)
+	at com.projectname.qa.TestCases.RegistrationTest.setup(RegistrationTest.java:21)
+... Removed 29 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="@AfterClass teardown" time="0.0" classname="com.projectname.qa.TestCases.RegistrationTest">
+    <skipped/>
+  </testcase>
+  <testcase name="FacbookLoginPageTest" time="0.019" classname="com.projectname.qa.TestCases.LoginTest">
+    <skipped/>
+  </testcase>
+  <testcase name="FacebookRegistrationPageTest" time="0.002" classname="com.projectname.qa.TestCases.RegistrationTest">
+    <skipped/>
+  </testcase>
+</testsuite>

@@ -1,0 +1,46 @@
+###HashMap
+====================================================================================================== 
+
+				       Empid	      Empname
+					101		ABC
+					102		PQR
+					103		XYZ
+
+=> Java Hashmap class implements map interface.
+=> In hashmap elements are stored in key and value format (i.e key value pair)
+=> In above table 101,102,103 are called as keys
+=> In above table ABC, PQR, XYZ are called as values of those keys.
+=> In Hashmap the keys are always unique. The values can be duplicate. (i.e key does not accept the dupicate but values can accept duplicate)
+=> Java Hashmap may have one null key and multiple null values.
+
+
+Program:- 
+=================================================================================
+
+public class HashmapExample {
+
+	public static void main(String[] args) {
+		// declare the hashmap.
+		HashMap<Integer,String> hm =new HashMap<Integer,String>();
+		// to add the data hasmap ==> put.
+			hm.put(101, "ABC");
+			hm.put(105, "xyz");
+			hm.put(98,"PQAESDJHB");
+			hm.put(102, "PQR");
+			hm.put(103, "LMN");
+			System.out.println(hm);
+			// add one more element:- you have to use next key. 
+			// modify
+			hm.put(102, "XYZ");
+			System.out.println(hm);
+			// remove the element
+			hm.remove(102,"XYZ");
+			System.out.println(hm);
+		
+			// to read hashmap.
+			for (Map.Entry m:hm.entrySet()) {
+				System.out.println(m.getKey()+ "  "+ m.getValue());
+			}		
+	}
+
+}

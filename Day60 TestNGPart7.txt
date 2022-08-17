@@ -1,0 +1,134 @@
+
+####### Grouping in TestNG:-
+====================================================================================================== 
+==> TestNG Groups allow you to perform groupings of different test methods. 
+==> Grouping of test methods is required when you want to access the test methods of different classes. 
+
+==> Example:- 
+====================================
+public class TestCase1 {
+	
+	@BeforeTest(alwaysRun=true)
+	public void OpenDB() {
+		System.out.println("Before Test:- Open Data Base");
+	}
+	
+	@AfterTest(alwaysRun=true)
+	public void CloseDB() {
+		System.out.println("After Test:- Close Data Base");
+	}
+	
+	
+	@BeforeClass(alwaysRun=true)
+	public void LaunchBrowser() {
+		System.out.println("Browser Launched");
+	}
+	
+	
+	@AfterClass(alwaysRun=true)
+	public void CloseBrowser() {
+		System.out.println("Browser Closed");
+	}
+	
+	@Test(groups="Smoke")
+	public void Test1() {
+		System.out.println("Test1");
+	}
+	
+	
+	@Test(groups="Functional")
+	public void Test2() {
+		System.out.println("Test2");
+	}
+	
+	@Test(groups= {"Functional","Regression"})
+	public void Test3() {
+		System.out.println("Test3");
+	}
+}
+       
+====================================
+public class TestCase2 {
+	
+	@BeforeClass(alwaysRun=true)
+	public void LaunchBrowser() {
+		System.out.println("Browser Launched");
+	}
+	
+	
+	@AfterClass(alwaysRun=true)
+	public void CloseBrowser() {
+		System.out.println("Browser Closed");
+	}
+	
+	@Test(groups="Smoke")
+	public void Test4() {
+		System.out.println("Test4");
+	}
+	
+	
+	@Test(groups="Functional")
+	public void Test5() {
+		System.out.println("Test5");
+	}
+	
+	@Test(groups= {"Functional","Regression"})
+	public void Test6() {
+		System.out.println("Test6");
+	}
+	
+}
+
+====================================
+
+public class TestCase3 {
+
+	@BeforeClass(alwaysRun=true)
+	public void LaunchBrowser() {
+		System.out.println("Browser Launched");
+	}
+	
+	
+	@AfterClass(alwaysRun=true)
+	public void CloseBrowser() {
+		System.out.println("Browser Closed");
+	}
+	
+	@Test(groups="Smoke")
+	public void Test7() {
+		System.out.println("Test7");
+	}
+	
+	
+	@Test(groups="Functional")
+	public void Test8() {
+		System.out.println("Test8");
+	}
+	
+	@Test(groups= {"Functional","Regression"})
+	public void Test9() {
+		System.out.println("Test9");
+	}
+	
+}
+
+
+
+Sample Xml File for Grouping:- 
+====================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<groups>
+		<run>
+			<include name="Smoke"></include>
+		</run>
+	</groups>
+	<test name="Smoke Test">
+		<classes>
+			<class name="CreatingTestGroups.TestCase1" />
+			<class name="CreatingTestGroups.TestCase2" />
+			<class name="CreatingTestGroups.TestCase3" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

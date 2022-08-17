@@ -1,0 +1,114 @@
+String:- 
+====================================
+1. String is not primitive data types.
+2. Memory is not fixed.
+3. String is used to store collection  of characters.
+4. String is a final class. Cant be inherited to other classes.
+
+
+String Class Methods:- / String Operations:-
+
+1. length():- It returns count of total number of characters present in string
+2. uppercase():- It converts the string into uppercase.
+3. lowercase():- It coverts the string into lowercase.
+4. charat():- It gives character at perticular index.
+5. indexof():- It returns the index of perticular character.
+6. lastindexof():- It gives last index of perticular character if appears multiple time.
+7. trim():- It trims the extra spaces around the string. (only at start and end not in between)
+
+
+String Comparisions:- 
+
+1. equals():- It compares two strings and its case sensitive. It returns either true or false.
+2. equalsignorecase():- It compares two strings without focusing on case sensitiveness.
+3. contains():- checks string is part of another string.
+4. isempty():- It checks weather string is empty or not.
+5. concats():- It Concats two strings.
+6. startswith():- It checks weather string starts with the mentioned pattern/letters or not.
+7. endswith():- It checks weather string ends with the mentioned pattern/letters or not.
+8. split():- It is used to split the given String.
+9. replace():- It is used to replace set of characters by another or can replace one part of string by another.
+10. substring():- It will take substring from given string based on index number.
+
+
+
+
+// Basic String Operation.
+
+public static void main(String[] args) {
+		
+		String s= "Velocity";
+		String s1= "Velociity";
+		String s2= " Welcome to Home ";
+		
+		// To caluclte the length.
+		System.out.println("The Length is "+ s.length());
+		
+		// Uppercase ==> To convert string in uppercase.
+		System.out.println("The Uppercase is "+ s.toUpperCase());
+		
+		// Lowercase
+		System.out.println("The Lowercase is "+ s.toLowerCase());
+		
+		// char at ==> the character at specific index.
+		System.out.println("The character at 3rd index " +s.charAt(3));
+		
+		// indexof ==> it will return index of secific character.
+		System.out.println("The index of i is "+ s.indexOf("i"));
+		
+		// lastindexof
+		System.out.println("The last index of i is "+ s1.lastIndexOf("i"));
+		
+		// trim 
+		System.out.println("The String s2 before trimming "+ s2);
+		System.out.println(" The String s2 after triming "+ s2.trim());
+		
+	}
+
+
+// Program String Comparision
+
+		String s="Velocity";
+		String s1 ="VELOCITY";
+		String s2= "Veloc";
+		
+		// equals. // its a case sensitive.  // True /false.
+		System.out.println(s.equals(s1));
+		
+		// equalsingnorecase:- 
+		System.out.println(s1.equalsIgnoreCase(s));
+		
+		// contains.
+		System.out.println(s.contains(s2));
+		
+		// isempty();
+		System.out.println("Checking the emptyness "+ s.isEmpty());
+	
+		String s4= "abc";
+		String s5= "xyz";
+		// concats.
+		System.out.println("The Concatinated string is "+ s4.concat(s5));
+		
+		// stratswith
+		System.out.println("The Strats with Method "+ s2.startsWith("ab"));
+		
+		// endswith
+		System.out.println("The ends with Method "+ s4.endsWith("bc"));
+		
+		String s6= "Welcome to Java";
+	
+		// replace
+		System.out.println("The Replace "+ s6.replace("Java", "Python"));
+		
+		
+		// substring
+		System.out.println("The Substring with start index only "+ s.substring(3));
+		System.out.println("The Suv=bstring with Start and end index "+ s.substring(3, 6));
+		
+	
+	String[] words=s6.split(" ");
+		for (int i=0; i<words.length;i++) {
+			System.out.println(words[i]);
+		}
+}
+

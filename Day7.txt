@@ -1,0 +1,108 @@
+Java Control Statements:- 
+--------------------------------------------------------
+Conditional Statements.
+Loop Statements.
+
+
+If... Else Loop/Condition.
+==> This is used to check the condition.
+==> The code with true value written in if block
+==> The code with false value written in else block
+==> At a time only one block will execute.
+==> you can write single if block without else block.
+==> You can not write else block without if block.
+
+
+Syntax of if...else block.
+if(condition){
+
+// Statements      // These statements will execute when the condition will be true.
+
+}else{
+
+// Statements      // These statements will execute when the condition will be false.
+
+}
+
+
+########## Even Odd Program #############
+
+public class EvenOddNumber {
+	
+	public static void main(String[] args) {
+		
+		int num=59863873;
+		
+		if(num%2 ==0) {
+			System.out.println("The Number is even");
+		}else {
+			System.out.println("The Number is odd");
+		}
+	}
+
+}
+
+########## Largest of Two Numbers #############
+
+public class LargestofTwoNumbers {
+
+	public static void main(String[] args) {
+
+		int a = 20;
+		int b = 50;
+
+		if(a>b) { System.out.println("A is largest Number"); 
+		}else {
+		 System.out.println("B is Largest Number"); }
+	}
+}
+
+########## Positive Negative Zero Number #############
+
+public class PositiveNegativeZero {
+	
+	public static void main(String[] args) {
+		
+		int a =10;
+		if (a>0) {
+			System.out.println("Positive");
+		}else if(a<0) {
+			System.out.println("Negative");
+		}else {
+			System.out.println("Zero");
+		}
+	}
+
+}
+
+########## String Comparision #############
+
+public class StringComparision {
+
+	public static void main(String[] args) {
+		
+		String Launguage= "C#";
+		
+		if (Launguage=="Java") {
+			System.out.println("Its Easy Launguage");
+		}else {
+			System.out.println("Its Difficult Launguage");
+		}
+	}
+	
+}
+
+########## User Validation #############
+
+public class UserValidation {
+
+	public static void main(String[] args) {
+		int age=3;
+		if(age>=18) {
+			System.out.println("User can open facebook account");
+		}else {
+			System.out.println("User can not open facebook account");
+		}
+	}
+	
+}

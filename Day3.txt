@@ -1,0 +1,78 @@
+Creating java project in Eclipse
+----------------------------
+File-->New-->Java Project-->Specify name for the java project-->Finish
+
+One Project can contain multiple packages.
+
+Creating Package in Project
+----------------------------
+Src--> New--> Enter Package Name --> Finish
+
+One Package can contain multiple classes.
+
+Creating Class in Package
+----------------------------
+
+Package--> New --> Class --> Enter ClassName --> Finish
+
+Class Nomenclature rules:-
+----------------------------
+1. It Should Start with upper case
+2. It should not start with Number
+3. It should not contain special character or space.
+
+Class:- Class is a definition block where programmer can declare varibles, data members, methods, member functions
+        Constructor and blocks.
+
+Class Body:-
+
+public class ClassName{
+ 	// Code	
+}
+
+
+Main Method:- 
+----------------------------
+==> To write a program we need main method.
+==> Java always look for main method
+==> Java is case sensetive.
+
+
+Syntax for main method:-
+----------------------------
+
+	public static void main(String args[])
+	{
+		//code
+	}
+
+
+How to run java program:- 
+----------------------------
+Rigt click-->Run as java application
+
+
+Checking the Properties and location of Program:- 
+-------------------------------------------------
+
+Project-->Right Click-->Check th loction in Properties.
+
+Open the path and check the files.
+
+
+
+Commenting in Eclipse:-
+------------------------
+1.Add // before the piece of code which we dont want to run.
+2.Comments are also added to provide the information about any block or line
+3.The commented portion will not be a part of code while execution.
+
+
+
+
+
+
+
+
+
+

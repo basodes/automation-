@@ -1,0 +1,71 @@
+TestNG:-
+========================================================================================================================
+
+NG ==> Next Generation
+
+Definition:- It is a java unit framework used for writing and desiging of test classes.
+	     It is a open Source Tool.
+	     It is one of the built in frame work.
+	     Junit and TestNG both are unit testin framework.
+	     TestNG has some advanced features so thats why its widely used in the market.
+
+Advantages:- TestNG generates reports.
+	     we can manage test suites and test cases.
+	     Various annotations are available.
+	     Supports to paramertization.
+	     TestNg doesnot have main method.
+
+
+How to install TestNG:- 
+===============================================================================================================================
+It is a by defalult plugin you will get  it.
+
+To Verify TestNg is available:- Window==> Prefrences==> TestNG option.
+
+If it is not available then 
+
+Go to Help==> Eclipse Market Place==> Find TestNG ==> Go and Install.
+			or
+Google==> MVN Repository==> Search for testng ==> Pick Version.
+			or
+Google==> TestNg 6.14.3 jar file download ==> Check and Ensure 3 Files are  downloaded inside it or not.
+			or
+Google==> Mvn Repository==> Select Version==> Go to version ==> download jar files ==> Scroll the  page download compile dependencies==> add org.yaml==>snakeyaml
+
+
+Introduction to Anotations:- 
+===============================================================================================================================
+
+
+public class IntroductionToTestNG{
+
+	@Test
+	public void openUrl()
+	{
+		System.out.println("Url is opened");
+		Reporter.log("Url is opened");
+	}
+	
+	@Test
+	public void login()
+	{
+		System.out.println("login is sucessfull");
+		Reporter.log("login is sucessfull");
+	}
+	
+	@Test
+	public void logout()
+	{
+		System.out.println("logout is sucessfull");
+		Reporter.log("logout is sucessfull");
+		Reporter.log("All events are completed sucessfully");
+	}
+}
+
+
+// Order of execution:- Login==> Logout==> OpenUrl (Based on Alphabetical order)
+// Otherwise if you want to maintain the order of execution then you have you use the Keyword priority.
+// At the time of execution testNG will not look for the order in which method  is written.It will always look for the priority.
+// Priority value can be anything. The Number which comes first will get first priority. (Eg. 10,20,30 or 5,7,10)
+
+
